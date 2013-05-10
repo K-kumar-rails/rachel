@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  database: rachel_development
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  database: rachel_test
+  username: postgres
+  password: postgres
+
+production:
+  adapter: postgresql
+  database: rachel_production
+  username: postgres
+  password: postgres

@@ -1,0 +1,993 @@
+Connecting to database specified by database.yml
+Started GET "/auction_admin/items/44" for 127.0.0.1 at 2013-04-23 14:14:56 +0530
+Processing by AuctionAdmin::ItemsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mAuctionAdmin Load (1.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mItem Load (1.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1  [["id", "44"]]
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 44[0m
+  [1m[35mItemCategory Load (0.6ms)[0m  SELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mAdminSetting Load (0.7ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mDonor Load (0.5ms)[0m  [1mSELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44[0m
+  Rendered auction_admin/items/_display_donors.html.erb (1.1ms)
+  Rendered auction_admin/items/show.html.erb within layouts/auction (381.0ms)
+Completed 500 Internal Server Error in 807ms
+** [Honeybadger] Unable to contact the Honeybadger server. HTTP Error=Timeout::Error
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Failure: NilClass
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+
+ActionView::Template::Error (application.css isn't precompiled):
+    3:   <head>
+    4:     <title>Auction Admin</title>
+    5:     <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+    6:     <%= stylesheet_link_tag    "application", :media => "all" %>
+    7:     <%= stylesheet_link_tag    "auction_admin_application", :media => "all" %>
+    8:     <%= javascript_include_tag "application" %>
+    9:     <link href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" rel="stylesheet">
+  app/views/layouts/auction.html.erb:6:in `_app_views_layouts_auction_html_erb___837395734_90680130'
+
+
+Connecting to database specified by database.yml
+Started GET "/auction_admin/items/44" for 127.0.0.1 at 2013-04-23 14:16:06 +0530
+Processing by AuctionAdmin::ItemsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mAuctionAdmin Load (1.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mItem Load (1.7ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1  [["id", "44"]]
+  [1m[36mImage Load (0.6ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 44[0m
+  [1m[35mItemCategory Load (0.5ms)[0m  SELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mAdminSetting Load (0.7ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mDonor Load (0.5ms)[0m  [1mSELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44[0m
+  Rendered auction_admin/items/_display_donors.html.erb (1.2ms)
+  Rendered auction_admin/items/show.html.erb within layouts/auction (382.4ms)
+Compiled bootstrap.css  (4444ms)  (pid 10585)
+Compiled bootstrap-responsive.css  (867ms)  (pid 10585)
+Compiled uniform.default.css  (0ms)  (pid 10585)
+Compiled tipsy.css  (0ms)  (pid 10585)
+Compiled global.css  (0ms)  (pid 10585)
+Compiled application.css  (5412ms)  (pid 10585)
+Compiled fullcalendar.css  (0ms)  (pid 10585)
+Compiled unicorn.main.css  (0ms)  (pid 10585)
+Compiled unicorn.grey.css  (0ms)  (pid 10585)
+Compiled select2.css  (0ms)  (pid 10585)
+Compiled auction_admin.css  (0ms)  (pid 10585)
+Compiled bootstrap-datetimepicker.min.css  (0ms)  (pid 10585)
+Compiled colorpicker.css  (0ms)  (pid 10585)
+Compiled jquery.ui.core.css  (3ms)  (pid 10585)
+Compiled jquery.ui.theme.css  (487ms)  (pid 10585)
+Compiled jquery.ui.accordion.css  (505ms)  (pid 10585)
+Compiled jquery.ui.menu.css  (8ms)  (pid 10585)
+Compiled jquery.ui.autocomplete.css  (85ms)  (pid 10585)
+Compiled jquery.ui.button.css  (9ms)  (pid 10585)
+Compiled jquery.ui.datepicker.css  (11ms)  (pid 10585)
+Compiled jquery.ui.resizable.css  (8ms)  (pid 10585)
+Compiled jquery.ui.dialog.css  (26ms)  (pid 10585)
+Compiled jquery.ui.progressbar.css  (23ms)  (pid 10585)
+Compiled jquery.ui.selectable.css  (6ms)  (pid 10585)
+Compiled jquery.ui.slider.css  (8ms)  (pid 10585)
+Compiled jquery.ui.spinner.css  (10ms)  (pid 10585)
+Compiled jquery.ui.tabs.css  (7ms)  (pid 10585)
+Compiled jquery.ui.tooltip.css  (6ms)  (pid 10585)
+Compiled jquery.ui.base.css  (1027ms)  (pid 10585)
+Compiled jquery.ui.all.css  (1038ms)  (pid 10585)
+Compiled auction_admin_application.css  (1139ms)  (pid 10585)
+Compiled jquery.js  (3ms)  (pid 10585)
+Compiled jquery_ujs.js  (0ms)  (pid 10585)
+Compiled bootstrap-transition.js  (0ms)  (pid 10585)
+Compiled bootstrap-affix.js  (0ms)  (pid 10585)
+Compiled bootstrap-alert.js  (0ms)  (pid 10585)
+Compiled bootstrap-button.js  (0ms)  (pid 10585)
+Compiled bootstrap-carousel.js  (0ms)  (pid 10585)
+Compiled bootstrap-collapse.js  (1ms)  (pid 10585)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 10585)
+Compiled bootstrap-modal.js  (0ms)  (pid 10585)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 10585)
+Compiled bootstrap-tab.js  (0ms)  (pid 10585)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 10585)
+Compiled bootstrap-popover.js  (0ms)  (pid 10585)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 10585)
+Compiled bootstrap.js  (193ms)  (pid 10585)
+Compiled jquery.uniform.min.js  (0ms)  (pid 10585)
+Compiled tinymce/preinit.js  (1ms)  (pid 10585)
+Compiled tinymce/tiny_mce_src.js  (8ms)  (pid 10585)
+Compiled tinymce.js  (155ms)  (pid 10585)
+Compiled jquery.tipsy.js  (0ms)  (pid 10585)
+Compiled common_custom.js  (0ms)  (pid 10585)
+Compiled jquery.tablednd.js  (1ms)  (pid 10585)
+Compiled jquery_nested_form.js  (0ms)  (pid 10585)
+Compiled autocomplete-rails.js  (0ms)  (pid 10585)
+Compiled application.js  (460ms)  (pid 10585)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'[0m
+  Rendered layouts/_admin_left_header.html.erb (5.3ms)
+  Rendered layouts/_header.html.erb (32.2ms)
+  Rendered shared/_flash_messages.html.erb (0.9ms)
+  Rendered layouts/_admin_footer.html.erb (0.6ms)
+Compiled select2.js  (1ms)  (pid 10585)
+Compiled jquery.dataTables.min.js  (1ms)  (pid 10585)
+Compiled unicorn.tables.js  (0ms)  (pid 10585)
+Compiled unicorn.js  (0ms)  (pid 10585)
+Compiled admin_dashboard.js  (0ms)  (pid 10585)
+Compiled excanvas.min.js  (81ms)  (pid 10585)
+Compiled jquery.ui.core.js  (0ms)  (pid 10585)
+Compiled jquery.ui.widget.js  (0ms)  (pid 10585)
+Compiled jquery.ui.accordion.js  (49ms)  (pid 10585)
+Compiled jquery.ui.position.js  (0ms)  (pid 10585)
+Compiled jquery.ui.menu.js  (11ms)  (pid 10585)
+Compiled jquery.ui.autocomplete.js  (24ms)  (pid 10585)
+Compiled jquery.ui.button.js  (5ms)  (pid 10585)
+Compiled jquery.ui.datepicker.js  (3ms)  (pid 10585)
+Compiled jquery.ui.mouse.js  (4ms)  (pid 10585)
+Compiled jquery.ui.draggable.js  (17ms)  (pid 10585)
+Compiled jquery.ui.resizable.js  (7ms)  (pid 10585)
+Compiled jquery.ui.dialog.js  (46ms)  (pid 10585)
+Compiled jquery.ui.droppable.js  (9ms)  (pid 10585)
+Compiled jquery.ui.effect.js  (0ms)  (pid 10585)
+Compiled jquery.ui.effect-blind.js  (6ms)  (pid 10585)
+Compiled jquery.ui.effect-bounce.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-clip.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-drop.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-explode.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-fade.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-fold.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-highlight.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-pulsate.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-scale.js  (105ms)  (pid 10585)
+Compiled jquery.ui.effect-shake.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-slide.js  (2ms)  (pid 10585)
+Compiled jquery.ui.effect-transfer.js  (2ms)  (pid 10585)
+Compiled jquery.ui.progressbar.js  (5ms)  (pid 10585)
+Compiled jquery.ui.selectable.js  (7ms)  (pid 10585)
+Compiled jquery.ui.slider.js  (7ms)  (pid 10585)
+Compiled jquery.ui.sortable.js  (7ms)  (pid 10585)
+Compiled jquery.ui.spinner.js  (8ms)  (pid 10585)
+Compiled jquery.ui.tabs.js  (5ms)  (pid 10585)
+Compiled jquery.ui.tooltip.js  (7ms)  (pid 10585)
+Compiled jquery.ui.all.js  (574ms)  (pid 10585)
+Compiled jquery.flot.min.js  (0ms)  (pid 10585)
+Compiled jquery.flot.resize.js  (0ms)  (pid 10585)
+Compiled jquery.peity.min.js  (0ms)  (pid 10585)
+Compiled fullcalendar.min.js  (1ms)  (pid 10585)
+Compiled unicorn.dashboard.js  (0ms)  (pid 10585)
+Compiled form_savior.js  (0ms)  (pid 10585)
+Compiled bootstrap-colorpicker.js  (0ms)  (pid 10585)
+Compiled jquery-ui-timepicker.js  (1ms)  (pid 10585)
+Compiled auction_admin_application.js  (1882ms)  (pid 10585)
+Completed 200 OK in 33433ms (Views: 33069.7ms | ActiveRecord: 31.5ms)
+Started GET "/assets/application-c305c6fabc024bb7d24b807023951141.css" for 127.0.0.1 at 2013-04-23 14:16:40 +0530
+Served asset /application-c305c6fabc024bb7d24b807023951141.css - 200 OK (0ms)
+Started GET "/assets/auction_admin_application-f0f933609a66573324c5f3fb669ca92b.css" for 127.0.0.1 at 2013-04-23 14:16:40 +0530
+Served asset /auction_admin_application-f0f933609a66573324c5f3fb669ca92b.css - 200 OK (0ms)
+Started GET "/assets/application-a1110aa239f9d0bfbbaebb0ccd62ac7f.js" for 127.0.0.1 at 2013-04-23 14:16:40 +0530
+Served asset /application-a1110aa239f9d0bfbbaebb0ccd62ac7f.js - 200 OK (0ms)
+Started GET "/assets/auction_admin_application-e580b0af5bb350afa12cd142c7660582.js" for 127.0.0.1 at 2013-04-23 14:16:40 +0530
+Served asset /auction_admin_application-e580b0af5bb350afa12cd142c7660582.js - 200 OK (0ms)
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-04-23 14:16:42 +0530
+Served asset /logo.png - 200 OK (26ms)
+Started GET "/auction_admin/items/44/edit" for 127.0.0.1 at 2013-04-23 14:16:53 +0530
+Processing by AuctionAdmin::ItemsController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mAuctionAdmin Load (0.6ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1[0m  [["id", "44"]]
+  [1m[35mCustomCategory Load (0.9ms)[0m  SELECT "custom_categories".* FROM "custom_categories" WHERE "custom_categories"."auction_admin_id" = 1 ORDER BY sort_order ASC
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  [1m[36mItemCategory Load (0.4ms)[0m  [1mSELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44[0m
+  Rendered auction_admin/items/_item_categories.html.erb (5.1ms)
+  [1m[35mAdminSetting Load (0.6ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mAuction Load (0.7ms)[0m  [1mSELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1[0m
+  [1m[35mAuction Load (0.5ms)[0m  SELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 44[0m
+  Rendered auction_admin/items/_item_images.html.erb (5.9ms)
+  [1m[35mDonor Load (0.4ms)[0m  SELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44
+  Rendered auction_admin/items/_item_donors.html.erb (5.9ms)
+  Rendered auction_admin/items/_default_bid_increment.html.erb (0.6ms)
+  Rendered auction_admin/items/_form.html.erb (78.1ms)
+  Rendered auction_admin/items/edit.html.erb within layouts/auction (87.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'
+  Rendered layouts/_admin_left_header.html.erb (88.3ms)
+  Rendered layouts/_header.html.erb (94.9ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_admin_footer.html.erb (0.1ms)
+Completed 200 OK in 226ms (Views: 184.7ms | ActiveRecord: 10.6ms)
+Started GET "/assets/file_wrapper/sprite.png" for 127.0.0.1 at 2013-04-23 14:16:53 +0530
+Served asset /file_wrapper/sprite.png - 200 OK (23ms)
+Started GET "/assets/tinymce/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:16:53 +0530
+Compiled tinymce/langs/en.js  (0ms)  (pid 10585)
+Served asset /tinymce/langs/en.js - 200 OK (180ms)
+Started GET "/assets/tinymce/themes/advanced/editor_template.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:16:53 +0530
+Compiled tinymce/themes/advanced/editor_template.js  (0ms)  (pid 10585)
+Served asset /tinymce/themes/advanced/editor_template.js - 200 OK (522ms)
+Started GET "/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-6c20bbb63adac6593be8d6bc5863c7fd.png" for 127.0.0.1 at 2013-04-23 14:16:54 +0530
+Served asset /jquery-ui/ui-bg_flat_75_ffffff_40x100-6c20bbb63adac6593be8d6bc5863c7fd.png - 200 OK (0ms)
+Started GET "/assets/tinymce/themes/advanced/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:16:54 +0530
+Compiled tinymce/themes/advanced/langs/en.js  (0ms)  (pid 10585)
+Served asset /tinymce/themes/advanced/langs/en.js - 200 OK (160ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/ui.css?3.5.8" for 127.0.0.1 at 2013-04-23 14:16:54 +0530
+Compiled tinymce/themes/advanced/skins/default/ui.css  (0ms)  (pid 10585)
+Served asset /tinymce/themes/advanced/skins/default/ui.css - 200 OK (299ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/content.css" for 127.0.0.1 at 2013-04-23 14:16:54 +0530
+Compiled tinymce/themes/advanced/skins/default/content.css  (0ms)  (pid 10585)
+Served asset /tinymce/themes/advanced/skins/default/content.css - 200 OK (74ms)
+Started GET "/assets/tinymce/themes/advanced/img/icons.gif" for 127.0.0.1 at 2013-04-23 14:16:54 +0530
+Served asset /tinymce/themes/advanced/img/icons.gif - 200 OK (111ms)
+Started GET "/auction_admin/items/44/edit" for 127.0.0.1 at 2013-04-23 14:17:20 +0530
+Processing by AuctionAdmin::ItemsController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mAuctionAdmin Load (0.6ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1  [["id", "44"]]
+  [1m[36mCustomCategory Load (0.5ms)[0m  [1mSELECT "custom_categories".* FROM "custom_categories" WHERE "custom_categories"."auction_admin_id" = 1 ORDER BY sort_order ASC[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mItemCategory Load (0.4ms)[0m  SELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44
+  Rendered auction_admin/items/_item_categories.html.erb (3.6ms)
+  [1m[36mAdminSetting Load (0.5ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mAuction Load (0.5ms)[0m  SELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1
+  [1m[36mAuction Load (0.4ms)[0m  [1mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 44
+  Rendered auction_admin/items/_item_images.html.erb (4.0ms)
+  [1m[36mDonor Load (0.4ms)[0m  [1mSELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44[0m
+  Rendered auction_admin/items/_item_donors.html.erb (3.9ms)
+  Rendered auction_admin/items/_default_bid_increment.html.erb (0.0ms)
+  Rendered auction_admin/items/_form.html.erb (26.9ms)
+  Rendered auction_admin/items/edit.html.erb within layouts/auction (32.9ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'[0m
+  Rendered layouts/_admin_left_header.html.erb (2.8ms)
+  Rendered layouts/_header.html.erb (9.0ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_admin_footer.html.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 44.2ms | ActiveRecord: 6.5ms)
+Started GET "/assets/tinymce/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:17:22 +0530
+Served asset /tinymce/langs/en.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/editor_template.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:17:22 +0530
+Served asset /tinymce/themes/advanced/editor_template.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:17:22 +0530
+Served asset /tinymce/themes/advanced/langs/en.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/ui.css?3.5.8" for 127.0.0.1 at 2013-04-23 14:17:22 +0530
+Served asset /tinymce/themes/advanced/skins/default/ui.css - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/content.css" for 127.0.0.1 at 2013-04-23 14:17:22 +0530
+Served asset /tinymce/themes/advanced/skins/default/content.css - 304 Not Modified (0ms)
+Started PUT "/auction_admin/items/44" for 127.0.0.1 at 2013-04-23 14:17:28 +0530
+Processing by AuctionAdmin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VLaHTUkBU5jJaSckcz5Ek6T4ELr73cBzKvw+Uegsq8k=", "item"=>{"item_categories_attributes"=>{"0"=>{"category_id"=>"1", "_destroy"=>"false", "id"=>"42"}}, "auction_id"=>"2", "title"=>"Test", "description"=>"", "bid_start"=>"2000", "value"=>"35", "start_time_str"=>"03/05/2013 07:54 PM", "end_time_str"=>"03/28/2013 10:00 PM", "images_attributes"=>{"0"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0xbe5a140 @original_filename="images.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"item[images_attributes][0][image]\"; filename=\"images.jpeg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20130423-10585-1s0cq6w>>, "image_cache"=>"", "_destroy"=>"false", "id"=>"28"}}, "donors_attributes"=>{"0"=>{"name"=>"mukesh patel", "email"=>"dipak@gmail.com", "url"=>"www.facebook.com/mukesh", "_destroy"=>"false", "id"=>"1"}}, "catalog_number"=>"3", "reserve_price"=>"", "buy_it_now"=>"", "popcorn_bidding"=>"0", "featured"=>"0", "gift_certificate"=>"0", "bid_increment"=>""}, "commit"=>"Update", "id"=>"44"}
+  [1m[35mAuctionAdmin Load (0.5ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1[0m  [["id", "44"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mItemCategory Load (0.4ms)[0m  [1mSELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44 AND "item_categories"."id" IN (42)[0m
+  [1m[35mImage Load (0.5ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 44 AND "images"."id" IN (28)
+  [1m[36mDonor Load (0.4ms)[0m  [1mSELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44 AND "donors"."id" IN (1)[0m
+  [1m[35mAuction Load (0.5ms)[0m  SELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mAdminSetting Load (0.5ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mItem Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "items" WHERE ("items"."catalog_number" = '3' AND "items"."id" != 44 AND "items"."auction_admin_id" = 1) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  UPDATE "items" SET "start_time" = '2013-03-05 19:54:00.000000', "end_time" = '2013-03-28 22:00:00.000000', "updated_at" = '2013-04-23 08:47:28.940122' WHERE "items"."id" = 44
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35m (0.4ms)[0m  UPDATE "images" SET "image" = 'images.jpeg', "updated_at" = '2013-04-23 08:47:28.947892' WHERE "images"."id" = 28
+  [1m[36m (19.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/auction_admin/items/44
+Completed 302 Found in 9592ms (ActiveRecord: 24.9ms)
+Started GET "/auction_admin/items/44" for 127.0.0.1 at 2013-04-23 14:17:38 +0530
+Processing by AuctionAdmin::ItemsController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mAuctionAdmin Load (0.5ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1[0m  [["id", "44"]]
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 44
+  [1m[36mItemCategory Load (0.4ms)[0m  [1mSELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mAdminSetting Load (0.6ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mDonor Load (0.6ms)[0m  SELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44
+  Rendered auction_admin/items/_display_donors.html.erb (0.3ms)
+  Rendered auction_admin/items/show.html.erb within layouts/auction (16.2ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'
+  Rendered layouts/_admin_left_header.html.erb (2.7ms)
+  Rendered layouts/_header.html.erb (9.7ms)
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered layouts/_admin_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 28.5ms | ActiveRecord: 3.9ms)
+Started GET "/auction_admin/items/44/edit" for 127.0.0.1 at 2013-04-23 14:18:05 +0530
+Processing by AuctionAdmin::ItemsController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mAuctionAdmin Load (0.5ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1  [["id", "44"]]
+  [1m[36mCustomCategory Load (0.4ms)[0m  [1mSELECT "custom_categories".* FROM "custom_categories" WHERE "custom_categories"."auction_admin_id" = 1 ORDER BY sort_order ASC[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mItemCategory Load (0.4ms)[0m  SELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44
+  Rendered auction_admin/items/_item_categories.html.erb (3.5ms)
+  [1m[36mAdminSetting Load (0.5ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mAuction Load (0.4ms)[0m  SELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1
+  [1m[36mAuction Load (0.5ms)[0m  [1mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 44
+  Rendered auction_admin/items/_item_images.html.erb (4.2ms)
+  [1m[36mDonor Load (0.3ms)[0m  [1mSELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44[0m
+  Rendered auction_admin/items/_item_donors.html.erb (3.7ms)
+  Rendered auction_admin/items/_default_bid_increment.html.erb (0.0ms)
+  Rendered auction_admin/items/_form.html.erb (28.2ms)
+  Rendered auction_admin/items/edit.html.erb within layouts/auction (34.0ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'[0m
+  Rendered layouts/_admin_left_header.html.erb (2.8ms)
+  Rendered layouts/_header.html.erb (8.8ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_admin_footer.html.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 45.0ms | ActiveRecord: 6.4ms)
+Started GET "/assets/tinymce/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:18:05 +0530
+Served asset /tinymce/langs/en.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/editor_template.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:18:05 +0530
+Served asset /tinymce/themes/advanced/editor_template.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:18:05 +0530
+Served asset /tinymce/themes/advanced/langs/en.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/ui.css?3.5.8" for 127.0.0.1 at 2013-04-23 14:18:06 +0530
+Served asset /tinymce/themes/advanced/skins/default/ui.css - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/content.css" for 127.0.0.1 at 2013-04-23 14:18:06 +0530
+Served asset /tinymce/themes/advanced/skins/default/content.css - 304 Not Modified (0ms)
+Started GET "/auction_admin/items/44/edit" for 127.0.0.1 at 2013-04-23 14:19:30 +0530
+Processing by AuctionAdmin::ItemsController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mAuctionAdmin Load (0.6ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" = $1 LIMIT 1[0m  [["id", "44"]]
+  [1m[35mCustomCategory Load (0.4ms)[0m  SELECT "custom_categories".* FROM "custom_categories" WHERE "custom_categories"."auction_admin_id" = 1 ORDER BY sort_order ASC
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  [1m[36mItemCategory Load (0.4ms)[0m  [1mSELECT "item_categories".* FROM "item_categories" WHERE "item_categories"."item_id" = 44[0m
+  Rendered auction_admin/items/_item_categories.html.erb (3.8ms)
+  [1m[35mAdminSetting Load (0.6ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mAuction Load (0.5ms)[0m  [1mSELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1[0m
+  [1m[35mAuction Load (0.4ms)[0m  SELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 44[0m
+  Rendered auction_admin/items/_item_images.html.erb (3.8ms)
+  [1m[35mDonor Load (0.4ms)[0m  SELECT "donors".* FROM "donors" WHERE "donors"."item_id" = 44
+  Rendered auction_admin/items/_item_donors.html.erb (3.7ms)
+  Rendered auction_admin/items/_default_bid_increment.html.erb (0.0ms)
+  Rendered auction_admin/items/_form.html.erb (26.0ms)
+  Rendered auction_admin/items/edit.html.erb within layouts/auction (32.1ms)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "item_queries" WHERE "item_queries"."auction_admin_id" = 1 AND "item_queries"."read" = 'f'
+  Rendered layouts/_admin_left_header.html.erb (2.6ms)
+  Rendered layouts/_header.html.erb (8.9ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_admin_footer.html.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 42.8ms | ActiveRecord: 6.9ms)
+Started GET "/assets/tinymce/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:19:33 +0530
+Served asset /tinymce/langs/en.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/editor_template.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:19:33 +0530
+Served asset /tinymce/themes/advanced/editor_template.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/langs/en.js?3.5.8" for 127.0.0.1 at 2013-04-23 14:19:34 +0530
+Served asset /tinymce/themes/advanced/langs/en.js - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/ui.css?3.5.8" for 127.0.0.1 at 2013-04-23 14:19:34 +0530
+Served asset /tinymce/themes/advanced/skins/default/ui.css - 304 Not Modified (0ms)
+Started GET "/assets/tinymce/themes/advanced/skins/default/content.css" for 127.0.0.1 at 2013-04-23 14:19:34 +0530
+Served asset /tinymce/themes/advanced/skins/default/content.css - 304 Not Modified (0ms)
+Started GET "/site/store/1" for 127.0.0.1 at 2013-04-23 14:22:17 +0530
+Processing by Site::StoresController#show as HTML
+  Parameters: {"store_id"=>"1"}
+  [1m[36mAdminSetting Load (0.6ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."id" = 1 LIMIT 1[0m
+  [1m[35mAuctionAdmin Load (0.5ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mBidder Load (2.9ms)[0m  [1m select bidders.*, SUM(bidding_details.bidding_amount) as total_bid_amount 
+ from bidders, biddings, items, bidding_details 
+ where bidders.id = biddings.bidder_id AND items.id = biddings.item_id AND 
+ biddings.id = bidding_details.bidding_id AND items.auction_admin_id = 1
+ group by bidders.id 
+ order by total_bid_amount desc limit 10
+[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."id" = 1 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "items" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE (auctions.admin_setting_id = 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "items" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE (auctions.admin_setting_id = 1)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "auctions" INNER JOIN "items" ON "items"."auction_id" = "auctions"."id" WHERE "auctions"."admin_setting_id" = 1 AND (items.bid_counter > 0)[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "auctions" INNER JOIN "items" ON "items"."auction_id" = "auctions"."id" INNER JOIN "biddings" ON "biddings"."item_id" = "items"."id" INNER JOIN "bidding_details" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "auctions"."admin_setting_id" = 1 AND (items.bid_counter > 0)
+  [1m[36mAuction Load (0.4ms)[0m  [1mSELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1[0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 2
+  [1m[36mBiddingDetail Load (0.8ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 42 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 43 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.6ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 3 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 12 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.5ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 13 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.6ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 44 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.5ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 4 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 1
+  [1m[36mBiddingDetail Load (0.5ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 7 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 1 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.6ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 2 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 8
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_id" = 7[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mSELECT SUM(invoices.price) AS sum_id FROM "invoices" WHERE "invoices"."auction_admin_id" = 1 AND "invoices"."status" = 3[0m
+  [1m[35m (0.6ms)[0m  SELECT SUM("donations"."amount") AS sum_id FROM "donations" WHERE "donations"."auction_admin_id" = 1 AND "donations"."status" = 't'
+  Rendered site/stores/_donate_cash.html.erb (3.0ms)
+  Rendered site/stores/_store_organization.html.erb (111.2ms)
+  Rendered shared/_ajax_load_spinner.html.erb (0.8ms)
+  Rendered shared/_ajax_load_spinner.html.erb (0.1ms)
+  Rendered site/stores/_auctions.html.erb (7.3ms)
+  Rendered site/stores/show.html.erb within layouts/store (123.0ms)
+Compiled store_user_script.js  (0ms)  (pid 10585)
+Compiled store_PIE.js  (1ms)  (pid 10585)
+Compiled store_theme.js  (0ms)  (pid 10585)
+Compiled store_application.js  (120ms)  (pid 10585)
+Compiled home_bootstrap.css  (1ms)  (pid 10585)
+Compiled home_theme.css  (0ms)  (pid 10585)
+Compiled home_external_pages.css  (0ms)  (pid 10585)
+Compiled store_style.css  (0ms)  (pid 10585)
+Compiled store_override.css  (0ms)  (pid 10585)
+Compiled donation.css  (0ms)  (pid 10585)
+Compiled store_application.css  (84ms)  (pid 10585)
+  Rendered layouts/_store_header.html.erb (4.0ms)
+  Rendered layouts/_auction_admin_contact_form.html.erb (1.8ms)
+  Rendered layouts/_home_footer.html.erb (5.8ms)
+Completed 200 OK in 8548ms (Views: 8377.2ms | ActiveRecord: 31.5ms)
+Started GET "/assets/store_application-e805dfc63e2caf79f42199f30c3d6f8f.js" for 127.0.0.1 at 2013-04-23 14:22:25 +0530
+Served asset /store_application-e805dfc63e2caf79f42199f30c3d6f8f.js - 200 OK (0ms)
+Started GET "/assets/store_application-350e107d86d0f0a7a549e6fd3d0b52f4.css" for 127.0.0.1 at 2013-04-23 14:22:25 +0530
+Served asset /store_application-350e107d86d0f0a7a549e6fd3d0b52f4.css - 200 OK (0ms)
+Started GET "/site/store/1/store_items" for 127.0.0.1 at 2013-04-23 14:22:25 +0530
+Processing by Site::StoresController#store_items as */*
+  Parameters: {"store_id"=>"1"}
+  [1m[36mAdminSetting Load (0.6ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."id" = 1 LIMIT 1[0m
+  [1m[35mAuctionAdmin Load (0.5ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mBidder Load (1.5ms)[0m  [1m select bidders.*, SUM(bidding_details.bidding_amount) as total_bid_amount 
+ from bidders, biddings, items, bidding_details 
+ where bidders.id = biddings.bidder_id AND items.id = biddings.item_id AND 
+ biddings.id = bidding_details.bidding_id AND items.auction_admin_id = 1
+ group by bidders.id 
+ order by total_bid_amount desc limit 10
+[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."id" = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "items" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE (auctions.admin_setting_id = 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "items" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE (auctions.admin_setting_id = 1)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "auctions" INNER JOIN "items" ON "items"."auction_id" = "auctions"."id" WHERE "auctions"."admin_setting_id" = 1 AND (items.bid_counter > 0)[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "auctions" INNER JOIN "items" ON "items"."auction_id" = "auctions"."id" INNER JOIN "biddings" ON "biddings"."item_id" = "items"."id" INNER JOIN "bidding_details" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "auctions"."admin_setting_id" = 1 AND (items.bid_counter > 0)
+  [1m[36mAuction Load (0.5ms)[0m  [1mSELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1[0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 2
+  [1m[36mBiddingDetail Load (0.5ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 42 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 43 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.8ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 3 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 12 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.6ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 13 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.6ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 44 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (1.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 4 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 1
+  [1m[36mBiddingDetail Load (1.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 7 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.6ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 1 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.6ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 2 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 8
+  [1m[36mItem Load (0.8ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_id" = 7[0m
+  [1m[35m (5.5ms)[0m  SELECT DISTINCT COUNT(*) FROM "items" INNER JOIN "item_categories" ON "item_categories"."item_id" = "items"."id" INNER JOIN "categories" ON "categories"."id" = "item_categories"."category_id" INNER JOIN "custom_categories" ON "custom_categories"."category_id" = "categories"."id" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE "items"."auction_admin_id" = 1 AND (custom_categories.auction_admin_id = 1 ) AND ((auctions.viewable_before_live = 't') or is_archive = 'f') AND (active = 't')
+  [1m[36mItem Load (4.4ms)[0m  [1mSELECT DISTINCT "items".* FROM "items" INNER JOIN "item_categories" ON "item_categories"."item_id" = "items"."id" INNER JOIN "categories" ON "categories"."id" = "item_categories"."category_id" INNER JOIN "custom_categories" ON "custom_categories"."category_id" = "categories"."id" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE "items"."auction_admin_id" = 1 AND (custom_categories.auction_admin_id = 1 ) AND ((auctions.viewable_before_live = 't') or is_archive = 'f') AND (active = 't') ORDER BY sort_order[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 6
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mAdminSetting Load (1.2ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mBiddingDetail Load (1.2ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 6 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mImage Load (0.6ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 1 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 1 ORDER BY created_at DESC LIMIT 1
+  [1m[36mImage Load (0.5ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 7[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 7 ORDER BY created_at DESC LIMIT 1
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 3[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 3 ORDER BY created_at DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 3 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 2 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 2 ORDER BY created_at DESC LIMIT 1
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."item_id" = 4[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 4 ORDER BY created_at DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 4 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 42
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 42 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mImage Load (0.4ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 43
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 43 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mImage Load (0.5ms)[0m  SELECT "images".* FROM "images" WHERE "images"."item_id" = 44
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."auction_admin_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 44 ORDER BY created_at DESC LIMIT 1[0m
+  Rendered site/categories/_items.html.erb (132.7ms)
+Completed 200 OK in 229ms (Views: 120.7ms | ActiveRecord: 30.7ms)
+Started GET "/site/store/1/store_categories" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Processing by Site::StoresController#store_categories as */*
+  Parameters: {"store_id"=>"1"}
+  [1m[35mAdminSetting Load (0.6ms)[0m  SELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."id" = 1 LIMIT 1
+  [1m[36mAuctionAdmin Load (0.5ms)[0m  [1mSELECT "auction_admins".* FROM "auction_admins" WHERE "auction_admins"."id" = 1 LIMIT 1[0m
+  [1m[35mBidder Load (1.4ms)[0m   select bidders.*, SUM(bidding_details.bidding_amount) as total_bid_amount 
+ from bidders, biddings, items, bidding_details 
+ where bidders.id = biddings.bidder_id AND items.id = biddings.item_id AND 
+ biddings.id = bidding_details.bidding_id AND items.auction_admin_id = 1
+ group by bidders.id 
+ order by total_bid_amount desc limit 10
+
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admin_settings".* FROM "admin_settings" WHERE "admin_settings"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "items" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE (auctions.admin_setting_id = 1)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "items" INNER JOIN "auctions" ON "auctions"."id" = "items"."auction_id" WHERE (auctions.admin_setting_id = 1)[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "auctions" INNER JOIN "items" ON "items"."auction_id" = "auctions"."id" WHERE "auctions"."admin_setting_id" = 1 AND (items.bid_counter > 0)
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "auctions" INNER JOIN "items" ON "items"."auction_id" = "auctions"."id" INNER JOIN "biddings" ON "biddings"."item_id" = "items"."id" INNER JOIN "bidding_details" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "auctions"."admin_setting_id" = 1 AND (items.bid_counter > 0)[0m
+  [1m[35mAuction Load (0.6ms)[0m  SELECT "auctions".* FROM "auctions" WHERE "auctions"."admin_setting_id" = 1
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_id" = 2[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 42 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.7ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 43 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.6ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 3 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.5ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 12 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.5ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 13 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.6ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 44 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.8ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 4 ORDER BY created_at DESC LIMIT 1
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_id" = 1[0m
+  [1m[35mBiddingDetail Load (0.7ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 7 ORDER BY created_at DESC LIMIT 1
+  [1m[36mBiddingDetail Load (0.6ms)[0m  [1mSELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 1 ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mBiddingDetail Load (0.6ms)[0m  SELECT "bidding_details".* FROM "bidding_details" INNER JOIN "biddings" ON "bidding_details"."bidding_id" = "biddings"."id" WHERE "biddings"."item_id" = 2 ORDER BY created_at DESC LIMIT 1
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_id" = 8[0m
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items" WHERE "items"."auction_id" = 7
+  [1m[36mItem Load (0.8ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."auction_admin_id" = 1 AND "items"."id" IS NULL LIMIT 1[0m
+  [1m[35mCustomCategory Load (0.5ms)[0m  SELECT "custom_categories".* FROM "custom_categories" WHERE "custom_categories"."auction_admin_id" = 1 ORDER BY sort_order ASC
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  Rendered site/stores/_store_categories.html.erb (20.1ms)
+Completed 200 OK in 112ms (Views: 21.8ms | ActiveRecord: 17.8ms)
+Started GET "/assets/home/store_content_bg.jpg" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/store_content_bg.jpg - 200 OK (23ms)
+Started GET "/assets/home/header_bg.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/header_bg.png - 200 OK (8ms)
+Started GET "/assets/home/nav_bg.jpg" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/nav_bg.jpg - 200 OK (2ms)
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /logo.png - 200 OK (0ms)
+Started GET "/assets/home/content_cotainer_bg.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/content_cotainer_bg.png - 200 OK (23ms)
+Started GET "/assets/home/domate_amt_btn_bg.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/domate_amt_btn_bg.gif - 200 OK (7ms)
+Started GET "/assets/home/auction_top_img1.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/auction_top_img1.gif - 200 OK (30ms)
+Started GET "/assets/home/store_search_btn.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/store_search_btn.gif - 200 OK (9ms)
+Started GET "/assets/spinner.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /spinner.gif - 200 OK (39ms)
+Started GET "/assets/home/auction_top_img2.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/auction_top_img2.gif - 200 OK (3ms)
+Started GET "/assets/home/top_content2_bg.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/top_content2_bg.gif - 200 OK (53ms)
+Started GET "/assets/home/footer_bg.jpg" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/footer_bg.jpg - 200 OK (20ms)
+Started GET "/assets/home/logo-footer.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/logo-footer.png - 200 OK (16ms)
+Started GET "/assets/home/icons.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/icons.png - 200 OK (26ms)
+Started GET "/assets/home/closed.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/closed.png - 200 OK (9ms)
+Started GET "/assets/home/no-image.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/no-image.png - 200 OK (8ms)
+Started GET "/assets/home/sold.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/sold.png - 200 OK (9ms)
+Started GET "/assets/home/aucation_bdr.gif" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/aucation_bdr.gif - 200 OK (40ms)
+Started GET "/assets/home/event_bullet.png" for 127.0.0.1 at 2013-04-23 14:22:26 +0530
+Served asset /home/event_bullet.png - 200 OK (113ms)
+Started GET "/assets/home/auction_leftdiv_h3Bg.png" for 127.0.0.1 at 2013-04-23 14:22:27 +0530
+Served asset /home/auction_leftdiv_h3Bg.png - 200 OK (21ms)
+Started GET "/assets/home/auction_group_bullet.gif" for 127.0.0.1 at 2013-04-23 14:22:27 +0530
+Served asset /home/auction_group_bullet.gif - 200 OK (15ms)
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method AuctionAdmin.page.
+Creating scope :page. Overwriting existing method AdminUser.page.
+Creating scope :page. Overwriting existing method SubscriptionType.page.
+Creating scope :page. Overwriting existing method Category.page.
+Creating scope :page. Overwriting existing method CustomCategory.page.
+Creating scope :page. Overwriting existing method AuctionAdminAddon.page.
+Creating scope :page. Overwriting existing method Invoice.page.
+Creating scope :page. Overwriting existing method Addon.page.
+Creating scope :page. Overwriting existing method Item.page.
+Creating scope :page. Overwriting existing method Auction.page.
+Creating scope :page. Overwriting existing method InvoiceDetail.page.
+Creating scope :page. Overwriting existing method Bidder.page.
+Creating scope :page. Overwriting existing method AdminSetting.page.
+Creating scope :page. Overwriting existing method BusinessAccount.page.
+Creating scope :page. Overwriting existing method PaymentMethod.page.
+Creating scope :page. Overwriting existing method Subscription.page.
+Creating scope :page. Overwriting existing method Authentication.page.
+Creating scope :page. Overwriting existing method Donation.page.
+Creating scope :page. Overwriting existing method AuctionAdminBidder.page.
+Creating scope :page. Overwriting existing method AuctionAdminBlanceSheet.page.
+Creating scope :page. Overwriting existing method AuctionEventType.page.
+Creating scope :page. Overwriting existing method BidderCreditCard.page.
+Creating scope :page. Overwriting existing method Bidding.page.
+Creating scope :page. Overwriting existing method BiddingDetail.page.
+Creating scope :page. Overwriting existing method BusinessItem.page.
+Creating scope :page. Overwriting existing method Donor.page.
+Creating scope :page. Overwriting existing method EventType.page.
+Creating scope :page. Overwriting existing method Feedback.page.
+Creating scope :page. Overwriting existing method Image.page.
+Creating scope :page. Overwriting existing method ItemCategory.page.
+Creating scope :page. Overwriting existing method ItemQuery.page.
+Creating scope :page. Overwriting existing method ManualItem.page.
+Creating scope :page. Overwriting existing method PaymentMethodType.page.
+Creating scope :page. Overwriting existing method PaymentTransaction.page.
+Creating scope :page. Overwriting existing method Referrer.page.
+Creating scope :page. Overwriting existing method SubscriptionTransaction.page.
+Creating scope :page. Overwriting existing method WatchItemMapping.page.
+Cache read: http://localhost:3000/?
+Dalli::Server#connect 127.0.0.1:11211
+Started GET "/" for 127.0.0.1 at 2013-05-02 19:33:36 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.5ms)
+Cache write: views/home_index
+Write fragment views/home_index (1.4ms)
+  Rendered home/index.html.erb within layouts/home (19.5ms)
+Compiled home_bootstrap.css  (74ms)  (pid 15725)
+Compiled home_theme.css  (0ms)  (pid 15725)
+Compiled home_external_pages.css  (0ms)  (pid 15725)
+Compiled home_animate.css  (1ms)  (pid 15725)
+Compiled home_custom.css  (0ms)  (pid 15725)
+Compiled home_style.css  (0ms)  (pid 15725)
+Compiled home_application.css  (108ms)  (pid 15725)
+Completed 500 Internal Server Error in 14978ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"ee1faace11d3b3883b0a7fd1"}
+
+ActionView::Template::Error (execution expired
+  (in /home/rails/rails_work/tom/cat/app/assets/stylesheets/home_application.css)):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___1028910302_88562010'
+  app/controllers/home_controller.rb:6:in `index'
+
+
+Cache read: http://localhost:3000/?
+Started GET "/" for 127.0.0.1 at 2013-05-02 19:34:30 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.5ms)
+  Rendered home/index.html.erb within layouts/home (0.8ms)
+Completed 500 Internal Server Error in 15103ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"2d2825292c9d0303a786e115"}
+
+ActionView::Template::Error (execution expired
+  (in /home/rails/rails_work/tom/cat/app/assets/stylesheets/home_application.css)):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___1028910302_88562010'
+  app/controllers/home_controller.rb:6:in `index'
+
+
+Cache read: http://localhost:3000/?
+Started GET "/" for 127.0.0.1 at 2013-05-02 19:36:02 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.5ms)
+  Rendered home/index.html.erb within layouts/home (0.8ms)
+Completed 500 Internal Server Error in 15103ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"84d103bdd1aec27077e30f05"}
+
+ActionView::Template::Error (execution expired
+  (in /home/rails/rails_work/tom/cat/app/assets/stylesheets/home_application.css)):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___1028910302_88562010'
+  app/controllers/home_controller.rb:6:in `index'
+
+
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method AuctionAdmin.page.
+Creating scope :page. Overwriting existing method AdminUser.page.
+Creating scope :page. Overwriting existing method SubscriptionType.page.
+Creating scope :page. Overwriting existing method Category.page.
+Creating scope :page. Overwriting existing method CustomCategory.page.
+Creating scope :page. Overwriting existing method AuctionAdminAddon.page.
+Creating scope :page. Overwriting existing method Invoice.page.
+Creating scope :page. Overwriting existing method Addon.page.
+Creating scope :page. Overwriting existing method Item.page.
+Creating scope :page. Overwriting existing method Auction.page.
+Creating scope :page. Overwriting existing method InvoiceDetail.page.
+Creating scope :page. Overwriting existing method Bidder.page.
+Creating scope :page. Overwriting existing method AdminSetting.page.
+Creating scope :page. Overwriting existing method BusinessAccount.page.
+Creating scope :page. Overwriting existing method PaymentMethod.page.
+Creating scope :page. Overwriting existing method Subscription.page.
+Creating scope :page. Overwriting existing method Authentication.page.
+Creating scope :page. Overwriting existing method Donation.page.
+Creating scope :page. Overwriting existing method AuctionAdminBidder.page.
+Creating scope :page. Overwriting existing method AuctionAdminBlanceSheet.page.
+Creating scope :page. Overwriting existing method AuctionEventType.page.
+Creating scope :page. Overwriting existing method BidderCreditCard.page.
+Creating scope :page. Overwriting existing method Bidding.page.
+Creating scope :page. Overwriting existing method BiddingDetail.page.
+Creating scope :page. Overwriting existing method BusinessItem.page.
+Creating scope :page. Overwriting existing method Donor.page.
+Creating scope :page. Overwriting existing method EventType.page.
+Creating scope :page. Overwriting existing method Feedback.page.
+Creating scope :page. Overwriting existing method Image.page.
+Creating scope :page. Overwriting existing method ItemCategory.page.
+Creating scope :page. Overwriting existing method ItemQuery.page.
+Creating scope :page. Overwriting existing method ManualItem.page.
+Creating scope :page. Overwriting existing method PaymentMethodType.page.
+Creating scope :page. Overwriting existing method PaymentTransaction.page.
+Creating scope :page. Overwriting existing method Referrer.page.
+Creating scope :page. Overwriting existing method SubscriptionTransaction.page.
+Creating scope :page. Overwriting existing method WatchItemMapping.page.
+Cache read: http://localhost:3000/?
+Dalli::Server#connect 127.0.0.1:11211
+Started GET "/" for 127.0.0.1 at 2013-05-02 19:39:17 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.7ms)
+  Rendered home/index.html.erb within layouts/home (79.2ms)
+Compiled home_bootstrap.css  (1ms)  (pid 15808)
+Compiled home_theme.css  (0ms)  (pid 15808)
+Compiled home_external_pages.css  (0ms)  (pid 15808)
+Compiled home_animate.css  (0ms)  (pid 15808)
+Compiled home_custom.css  (0ms)  (pid 15808)
+Compiled home_style.css  (0ms)  (pid 15808)
+Compiled home_application.css  (143ms)  (pid 15808)
+Completed 500 Internal Server Error in 15189ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"249115608bd0e75f4243529c"}
+
+ActionView::Template::Error (execution expired
+  (in /home/rails/rails_work/tom/cat/app/assets/stylesheets/home_application.css)):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___117006338_100859220'
+  app/controllers/home_controller.rb:6:in `index'
+
+
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method AuctionAdmin.page.
+Creating scope :page. Overwriting existing method AdminUser.page.
+Creating scope :page. Overwriting existing method SubscriptionType.page.
+Creating scope :page. Overwriting existing method Category.page.
+Creating scope :page. Overwriting existing method CustomCategory.page.
+Creating scope :page. Overwriting existing method AuctionAdminAddon.page.
+Creating scope :page. Overwriting existing method Invoice.page.
+Creating scope :page. Overwriting existing method Addon.page.
+Creating scope :page. Overwriting existing method Item.page.
+Creating scope :page. Overwriting existing method Auction.page.
+Creating scope :page. Overwriting existing method InvoiceDetail.page.
+Creating scope :page. Overwriting existing method Bidder.page.
+Creating scope :page. Overwriting existing method AdminSetting.page.
+Creating scope :page. Overwriting existing method BusinessAccount.page.
+Creating scope :page. Overwriting existing method PaymentMethod.page.
+Creating scope :page. Overwriting existing method Subscription.page.
+Creating scope :page. Overwriting existing method Authentication.page.
+Creating scope :page. Overwriting existing method Donation.page.
+Creating scope :page. Overwriting existing method AuctionAdminBidder.page.
+Creating scope :page. Overwriting existing method AuctionAdminBlanceSheet.page.
+Creating scope :page. Overwriting existing method AuctionEventType.page.
+Creating scope :page. Overwriting existing method BidderCreditCard.page.
+Creating scope :page. Overwriting existing method Bidding.page.
+Creating scope :page. Overwriting existing method BiddingDetail.page.
+Creating scope :page. Overwriting existing method BusinessItem.page.
+Creating scope :page. Overwriting existing method Donor.page.
+Creating scope :page. Overwriting existing method EventType.page.
+Creating scope :page. Overwriting existing method Feedback.page.
+Creating scope :page. Overwriting existing method Image.page.
+Creating scope :page. Overwriting existing method ItemCategory.page.
+Creating scope :page. Overwriting existing method ItemQuery.page.
+Creating scope :page. Overwriting existing method ManualItem.page.
+Creating scope :page. Overwriting existing method PaymentMethodType.page.
+Creating scope :page. Overwriting existing method PaymentTransaction.page.
+Creating scope :page. Overwriting existing method Referrer.page.
+Creating scope :page. Overwriting existing method SubscriptionTransaction.page.
+Creating scope :page. Overwriting existing method WatchItemMapping.page.
+Cache read: http://localhost:3000/?
+Dalli::Server#connect 127.0.0.1:11211
+Started GET "/" for 127.0.0.1 at 2013-05-02 19:43:40 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.6ms)
+  Rendered home/index.html.erb within layouts/home (78.7ms)
+Completed 500 Internal Server Error in 14946ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"ab253f27cc2468162f6ed54e"}
+
+ActionView::Template::Error (execution expired
+  (in /home/rails/rails_work/tom/cat/app/assets/stylesheets/home_application.css)):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___982797812_87898980'
+  app/controllers/home_controller.rb:6:in `index'
+
+
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method AuctionAdmin.page.
+Creating scope :page. Overwriting existing method AdminUser.page.
+Creating scope :page. Overwriting existing method SubscriptionType.page.
+Creating scope :page. Overwriting existing method Category.page.
+Creating scope :page. Overwriting existing method CustomCategory.page.
+Creating scope :page. Overwriting existing method AuctionAdminAddon.page.
+Creating scope :page. Overwriting existing method Invoice.page.
+Creating scope :page. Overwriting existing method Addon.page.
+Creating scope :page. Overwriting existing method Item.page.
+Creating scope :page. Overwriting existing method Auction.page.
+Creating scope :page. Overwriting existing method InvoiceDetail.page.
+Creating scope :page. Overwriting existing method Bidder.page.
+Creating scope :page. Overwriting existing method AdminSetting.page.
+Creating scope :page. Overwriting existing method BusinessAccount.page.
+Creating scope :page. Overwriting existing method PaymentMethod.page.
+Creating scope :page. Overwriting existing method Subscription.page.
+Creating scope :page. Overwriting existing method Authentication.page.
+Creating scope :page. Overwriting existing method Donation.page.
+Creating scope :page. Overwriting existing method AuctionAdminBidder.page.
+Creating scope :page. Overwriting existing method AuctionAdminBlanceSheet.page.
+Creating scope :page. Overwriting existing method AuctionEventType.page.
+Creating scope :page. Overwriting existing method BidderCreditCard.page.
+Creating scope :page. Overwriting existing method Bidding.page.
+Creating scope :page. Overwriting existing method BiddingDetail.page.
+Creating scope :page. Overwriting existing method BusinessItem.page.
+Creating scope :page. Overwriting existing method Donor.page.
+Creating scope :page. Overwriting existing method EventType.page.
+Creating scope :page. Overwriting existing method Feedback.page.
+Creating scope :page. Overwriting existing method Image.page.
+Creating scope :page. Overwriting existing method ItemCategory.page.
+Creating scope :page. Overwriting existing method ItemQuery.page.
+Creating scope :page. Overwriting existing method ManualItem.page.
+Creating scope :page. Overwriting existing method PaymentMethodType.page.
+Creating scope :page. Overwriting existing method PaymentTransaction.page.
+Creating scope :page. Overwriting existing method Referrer.page.
+Creating scope :page. Overwriting existing method SubscriptionTransaction.page.
+Creating scope :page. Overwriting existing method WatchItemMapping.page.
+Cache read: http://localhost:3000/?
+Dalli::Server#connect 127.0.0.1:11211
+Started GET "/" for 127.0.0.1 at 2013-05-02 20:16:39 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.6ms)
+  Rendered home/index.html.erb within layouts/home (11.0ms)
+Completed 500 Internal Server Error in 14867ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"3b80ddcb7e8fc71818893672"}
+
+ActionView::Template::Error (execution expired
+  (in /home/rails/rails_work/tom/cat/app/assets/stylesheets/home_application.css)):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___989810958_97388420'
+  app/controllers/home_controller.rb:6:in `index'
+
+
+Connecting to database specified by database.yml
+Creating scope :page. Overwriting existing method AuctionAdmin.page.
+Creating scope :page. Overwriting existing method AdminUser.page.
+Creating scope :page. Overwriting existing method SubscriptionType.page.
+Creating scope :page. Overwriting existing method Category.page.
+Creating scope :page. Overwriting existing method CustomCategory.page.
+Creating scope :page. Overwriting existing method AuctionAdminAddon.page.
+Creating scope :page. Overwriting existing method Invoice.page.
+Creating scope :page. Overwriting existing method Addon.page.
+Creating scope :page. Overwriting existing method Item.page.
+Creating scope :page. Overwriting existing method Auction.page.
+Creating scope :page. Overwriting existing method InvoiceDetail.page.
+Creating scope :page. Overwriting existing method Bidder.page.
+Creating scope :page. Overwriting existing method AdminSetting.page.
+Creating scope :page. Overwriting existing method BusinessAccount.page.
+Creating scope :page. Overwriting existing method PaymentMethod.page.
+Creating scope :page. Overwriting existing method Subscription.page.
+Creating scope :page. Overwriting existing method Authentication.page.
+Creating scope :page. Overwriting existing method Donation.page.
+Creating scope :page. Overwriting existing method AuctionAdminBidder.page.
+Creating scope :page. Overwriting existing method AuctionAdminBlanceSheet.page.
+Creating scope :page. Overwriting existing method AuctionEventType.page.
+Creating scope :page. Overwriting existing method BidderCreditCard.page.
+Creating scope :page. Overwriting existing method Bidding.page.
+Creating scope :page. Overwriting existing method BiddingDetail.page.
+Creating scope :page. Overwriting existing method BusinessItem.page.
+Creating scope :page. Overwriting existing method Donor.page.
+Creating scope :page. Overwriting existing method EventType.page.
+Creating scope :page. Overwriting existing method Feedback.page.
+Creating scope :page. Overwriting existing method Image.page.
+Creating scope :page. Overwriting existing method ItemCategory.page.
+Creating scope :page. Overwriting existing method ItemQuery.page.
+Creating scope :page. Overwriting existing method ManualItem.page.
+Creating scope :page. Overwriting existing method PaymentMethodType.page.
+Creating scope :page. Overwriting existing method PaymentTransaction.page.
+Creating scope :page. Overwriting existing method Referrer.page.
+Creating scope :page. Overwriting existing method SubscriptionTransaction.page.
+Creating scope :page. Overwriting existing method WatchItemMapping.page.
+Cache read: http://localhost:3000/?
+Dalli::Server#connect 127.0.0.1:11211
+Started GET "/" for 127.0.0.1 at 2013-05-02 20:18:47 +0530
+Processing by HomeController#index as HTML
+Cache read: views/home_index
+Read fragment views/home_index (0.7ms)
+  Rendered home/index.html.erb within layouts/home (97.5ms)
+Completed 500 Internal Server Error in 202ms
+** [Honeybadger] Success: Net::HTTPCreated
+** [Honeybadger] Environment Info: [Ruby: 1.9.3] [Rails: 3.2.11] [Env: staging]
+** [Honeybadger] Response from Honeybadger: 
+{"id":"5ebf842a538908a909acba33"}
+
+ActionView::Template::Error (home_application.css isn't precompiled):
+    15:   <title>24Fundraiser | Online Fundraising Management Software</title>
+    16:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    17:   <!-- Bootstrap -->
+    18:   <%= stylesheet_link_tag    "home_application" %>
+    19:   <%= javascript_include_tag "application" %>
+    20:   <%= javascript_include_tag "home_application" %>
+    21:   <!--
+  app/views/layouts/home.html.erb:18:in `_app_views_layouts_home_html_erb___690482141_90791590'
+  app/controllers/home_controller.rb:6:in `index'
+
+
