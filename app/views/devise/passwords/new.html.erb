@@ -10,16 +10,13 @@
             <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
               <%= devise_error_messages! %>
               <%= f.text_field :email, :placeholder => "Email address" %>
-              <% unless mobile_device? %>
-                <%= raw recaptcha_tag(:challenge, :display => {:theme => 'white'}) %>
-              <% end %>
               <%= f.submit "Reset password", :class => "btn", :style=>"margin: 14px;" %>
             <% end %>
           </div>
         </div>
       </div>
-      <p class="already">Know your password? <%= link_to('Sign in', new_auction_admin_session_path) %></p>
-      <p class="already">Didn't receive confirmation instructions? <%= link_to "Resend it", new_confirmation_path(resource_name) %></p>
+      <p class="already">Know your password? <%= link_to('Sign in', new_customer_session_path) %></p>
+      <!--<p class="already">Didn't receive confirmation instructions? <%#= link_to "Resend it", new_confirmation_path(resource_name) %></p>-->
     </div>
   </div>
 </div>
