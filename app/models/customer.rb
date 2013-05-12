@@ -2,7 +2,7 @@ class Customer < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  PROFILE_ATTRIBUTES = [:email, :first_name, :last_name, :address, :city, :state, :zip_code, :country, :username, :timezone]
+  PROFILE_ATTRIBUTES = [:email, :first_name, :last_name, :address, :city, :state, :zip_code, :country, :username]
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :confirmable, :authentication_keys => [:login]
@@ -10,7 +10,7 @@ class Customer < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :current_password, :remember_me, :first_name,
     :last_name, :username, :phone_number, :address, :city, :state, :zip_code, :country,
-    :terms_of_service, :email_confirmation, :timezone, :login
+    :terms_of_service, :email_confirmation, :login
 
   attr_accessor :current_password, :login
   validates :first_name, :presence => true, :format => { :with => /^[a-zA-Z ]+$/, :message => "Only letters allowed"  }
@@ -67,4 +67,9 @@ class Customer < ActiveRecord::Base
       where(conditions).first
     end
   end
+  
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+  
 end

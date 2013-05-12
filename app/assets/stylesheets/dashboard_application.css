@@ -12,7 +12,7 @@
  *= require fullcalendar
  *= require unicorn.main
  *= require unicorn.grey
- *= require auction_admin
+ *= require dashboard
  */
 .logo_fix{
   height: 38px !important;

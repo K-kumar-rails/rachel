@@ -1,6 +1,6 @@
 class CustomerRegistrationsController < Devise::RegistrationsController
   before_filter :authenticate_customer!, :only => [:update, :edit]
-  layout 'auction', :only => [:edit, :update]
+  layout 'dashboard', :only => [:edit, :update]
 
   def update
     # required for settings form to submit when password is left blank

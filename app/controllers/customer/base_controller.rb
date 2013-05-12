@@ -1,3 +1,3 @@
 class Customer::BaseController < ApplicationController
-  layout "auction"
+  layout "dashboard"
 end

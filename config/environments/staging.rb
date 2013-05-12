@@ -47,7 +47,7 @@ Cat::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w( auction_admin_application.js auction_admin_application.css frontend_application.css frontend_application.js store_application.css store_application.js home_application.css home_application.js bidder_application.css )
+  config.assets.precompile += %w( dashboard_application.js dashboard_application.css frontend_application.css frontend_application.js store_application.css store_application.js home_application.css home_application.js bidder_application.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

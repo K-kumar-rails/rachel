@@ -2,7 +2,7 @@ class Customer::ProfilesController < Customer::BaseController
   before_filter :authenticate_customer!
 
   def show
-    @customer = AuctionAdmin.find(current_customer)
+    @customer = Customer.find(current_customer)
   end
 
   def change_password
@@ -16,8 +16,6 @@ class Customer::ProfilesController < Customer::BaseController
       flash[:notice] = "Password updated successfully"
       sign_in @resource, :bypass => true
       redirect_to customer_dashboard_index_path
-    else
-      #flash[:notice] = "Password does not match confirmation"
     end
   end
 
@@ -28,8 +26,6 @@ class Customer::ProfilesController < Customer::BaseController
       flash[:notice] = "Username updated successfully"
       sign_in @resource, :bypass => true
       redirect_to customer_dashboard_index_path
-    else
-      #flash[:notice] = "Couldn't update the username"
     end
   end
 end
