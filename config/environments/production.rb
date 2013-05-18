@@ -47,11 +47,11 @@ Cat::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
-  config.assets.precompile += %w( auction_admin_application.js auction_admin_application.css frontend_application.css frontend_application.js )
+  config.assets.precompile += %w( dashboard_application.js dashboard_application.css frontend_application.css frontend_application.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'rachel-staging.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'rachel-prod.herokuapp.com' }
   config.action_mailer.delivery_method = :test
 
   # Enable threaded mode

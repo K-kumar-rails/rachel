@@ -15,3 +15,9 @@ production:
   database: rachel_production
   username: postgres
   password: postgres
+
+staging:
+  adapter: postgresql
+  database: rachel_development
+  username: postgres
+  password: postgres

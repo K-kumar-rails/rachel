@@ -11,10 +11,10 @@
     </li>
 
     <li class="btn btn-inverse" >
-      <%= link_to '<i class="icon icon-user"></i> <span class="text">Profile</span>'.html_safe, "#" %>
+      <%= link_to '<i class="icon icon-user"></i> <span class="text">Profile</span>'.html_safe, customer_profile_path %>
     </li>
     <li class="btn btn-inverse">
-      <a title="" href="#">
+      <a title="" href="<%= edit_customer_registration_path %>">
         <i class="icon icon-cog"></i>
         <span class="text">Settings</span>
       </a>
