@@ -1,6 +1,10 @@
 Cat::Application.routes.draw do
-  devise_for :customers, :controllers => {:registrations => "customer_registrations", 
-    :passwords => "customer_passwords" }
+  devise_for :customers, 
+    :controllers => {
+      :registrations => "customer_registrations", 
+      :passwords => "customer_passwords", 
+      :sessions => "customer/sessions"
+    }
 
   namespace 'customer' do
     resources 'dashboard' , :only => [:index]
