@@ -14,7 +14,7 @@
   text-decoration: underline;
 }
 #box_login .box{
-    background-color: white;
+  background-color: white;
   border: 1px solid #CCC;
   border-radius: 4px 4px 4px 4px;
   float: none;
@@ -22,17 +22,16 @@
   padding-bottom: 26px;
   width: 38%;
   margin-bottom: 25px;
-  box-shadow: 0px 0px 10px 0px #DDD;
 }
 #box_login .box .head{
   background-color: #F4F4F4;
-    border-bottom: 1px solid #D6D6D6;
-    border-radius: 4px 4px 1px 0;
-    display: inline-block;
-    margin-bottom: 37px;
-    padding: 25px 0 25px;
-    text-align: center;
-    width: 100%;
+  border-bottom: 1px solid #D6D6D6;
+  border-radius: 4px 4px 1px 0;
+  display: inline-block;
+  margin-bottom: 37px;
+  padding: 25px 0 25px;
+  text-align: center;
+  width: 100%;
 }
 #box_login .box .head h4{
   font-weight: normal;
@@ -54,13 +53,12 @@
   background: linear-gradient(to bottom, #6887c4 0%,#4566a9 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6887c4', endColorstr='#4566a9',GradientType=0 );
   border: 1px solid #3B4868;
-    border-radius: 3px 3px 3px 3px;
-    display: inline-block;
-    height: 37px;
-    overflow: hidden;
-    width: 99%;
-
-    text-decoration: none !important;
+  border-radius: 3px 3px 3px 3px;
+  display: inline-block;
+  height: 37px;
+  overflow: hidden;
+  width: 99%;
+  text-decoration: none !important;
 }
 #box_login .box .social a.face_login:hover {
   background: #6887c4;
@@ -74,36 +72,36 @@
 }
 #box_login .box .social a.face_login span.face_icon{
   background-color: #39599F;
-    border-radius: 3px 0 0 3px;
-    float: left;
-    height: 37px;
-    text-align: center;
-    width: 51px;
+  border-radius: 3px 0 0 3px;
+  float: left;
+  height: 37px;
+  text-align: center;
+  width: 51px;
 }
 #box_login .box .social a.face_login span.face_icon img{
   margin-top: 5px;
 }
 #box_login .box .social a.face_login span.text{
   color: #FFFFFF;
-    float: left;
-    font-size: 17px;
-    font-weight: bold;
-    margin: 8px 0 0 30px;
-    text-shadow: 1px 1px 0 #39599F;
+  float: left;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 8px 0 0 30px;
+  text-shadow: 1px 1px 0 #39599F;
 }
 #box_login .box .division{
   display: inline-block;
-    margin: 17px 0 23px;
-    position: relative;
-    text-align: center;
-    width: 100%;
+  margin: 17px 0 23px;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 #box_login .box .division hr{
   border-color: #E2E2E4;
-    border-width: 1px;
-    margin: 0;
-    position: absolute;
-    width: 40%;
+  border-width: 1px;
+  margin: 0;
+  position: absolute;
+  width: 40%;
 }
 #box_login .box .division hr.left{
   top: 13px;
@@ -136,21 +134,19 @@
     width: 95%;
 }
 #box_login .box .form input[type="submit"]{
-  border-color: #CCCCCC;
-    border-radius: 7px 7px 7px 7px;
-    color: #394350;
-    font-size: 16px;
-    font-weight: 900;
-    margin-top: 34px;
+  border-radius: 7px 7px 7px 7px;
+  font-size: 16px;
+  font-weight: 900;
+  margin-top: 34px;
 }
 #box_login .box .form .remember{
   margin-top: 10px;
   overflow: hidden;
-    width: 100%;
+  width: 100%;
 }
 #box_login .box .form .remember .left{
   float: left;
-    width: 45%;
+  width: 45%;
 }
 #box_login .box .form .remember .left input[type="checkbox"]{
   float: left;
@@ -168,10 +164,9 @@
   float: right;
 }
 #box_login .box .form .remember .right a{
-  color: #7EA05E;
   float: right;
-    line-height: 16px;
-    margin: 3px 0 0;
+  line-height: 16px;
+  margin: 3px 0 0;
   font-style: 14px;
   font-weight: bold;
   

@@ -1,12 +1,13 @@
 class Customer::SubProfilesController < Customer::BaseController
   before_filter :authenticate_customer!
-
+  before_filter :get_customer_obj, :except => [:index, :new, :create]
+  
   def index
-    @customers = current_customer.children
+    @sub_accounts = current_customer.children
   end
 
   def show
-    @customer = current_customer.find(params[:id])
+    
   end
 
   def new
@@ -14,7 +15,7 @@ class Customer::SubProfilesController < Customer::BaseController
   end
 
   def edit
-    @customer = current_customer.children.find(params[:id])
+    
   end
 
   def create
@@ -23,32 +24,52 @@ class Customer::SubProfilesController < Customer::BaseController
     respond_to do |format|
       if @customer.save
         format.html { 
-          redirect_to new_customer_sub_profile_path, notice: 'Sub account was successfully created.' 
+          redirect_to customer_sub_profiles_path, 
+          notice: 'Account was successfully created.' 
         }
       else
-        format.html { render action: "new" }
+        format.html { 
+          render action: "new" 
+        }
       end
     end
   end
 
   def update
-    @customer = current_customer.children.find(params[:id])
-
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
-        format.html { redirect_to @customer, notice: 'Auction was successfully updated.' }
+        format.html { 
+          redirect_to customer_sub_profiles_path, 
+          notice: 'Account was successfully updated.' 
+        }
       else
-        format.html { render action: "edit" }
+        format.html { 
+          render action: "edit" 
+        }
       end
     end
   end
 
   def destroy
-    @customer = current_customer.children.find(params[:id])
     @customer.destroy
-
     respond_to do |format|
-      format.html { redirect_to customers_url }
+      format.html { 
+        redirect_to customer_sub_profiles_path,
+        notice: 'Account was successfully deleted.' 
+      }
     end
   end
+  
+  
+  private
+  
+  def get_customer_obj
+    @customer = current_customer.children.find(params[:id])
+    
+    unless @customer.present?
+      return redirect_to customer_sub_profiles_path,
+        notice: 'You can not access requested account'
+    end
+  end
+  
 end

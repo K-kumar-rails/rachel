@@ -27,12 +27,15 @@
 
 <div id="sidebar">
   <a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
-  <ul>
-    <li class="active">
+  <ul id="sidebar_nav">
+    <li>
       <%= link_to '<i class="icon icon-home"></i><span>Dashboard</span>'.html_safe, customer_dashboard_index_path %>
     </li>
     <li>
       <%= link_to '<i class="icon icon-home"></i><span>Create Sub Account</span>'.html_safe, new_customer_sub_profile_path %>
+    </li>
+    <li>
+      <%= link_to '<i class="icon icon-home"></i><span>Sub Accounts list</span>'.html_safe, customer_sub_profiles_path %>
     </li>
   </ul>
 </div>
