@@ -25,7 +25,7 @@ class Customer < ActiveRecord::Base
 
   #Define association
   belongs_to :parent, :class_name => 'Customer'
-  has_many :children, :class_name => 'Customer'
+  has_many :children, :class_name => 'Customer', :foreign_key => "parent_id"
 
   def is_profile_complete?
     @complete_attributes_count = 0
