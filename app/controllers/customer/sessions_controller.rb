@@ -1,7 +1,13 @@
 class Customer::SessionsController < Devise::SessionsController
 
   def create
-    if warden.authenticate.parent.present?
+    customer = Customer.where(:email=>params[:customer]["login"]).first
+    unless customer.present?
+      flash[:error] = "Invalid username or password"
+      redirect_to new_customer_session_path and return
+    end 
+    
+    if warden.authenticate.present? && warden.authenticate.parent.present?
       self.resource = warden.authenticate.parent
     else
       self.resource = warden.authenticate!(auth_options)
