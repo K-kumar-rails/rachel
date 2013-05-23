@@ -1,9 +1,10 @@
 class Customer::SubProfilesController < Customer::BaseController
   before_filter :authenticate_customer!
   before_filter :get_customer_obj, :except => [:index, :new, :create]
+  before_filter :check_for_access_data, :except => [:index, :show]
   
   def index
-    @sub_accounts = current_customer.children
+    @sub_accounts = current_parent.children
   end
 
   def show
@@ -11,7 +12,7 @@ class Customer::SubProfilesController < Customer::BaseController
   end
 
   def new
-    @customer = current_customer.children.new
+    @customer = current_parent.children.new
   end
 
   def edit
@@ -19,7 +20,7 @@ class Customer::SubProfilesController < Customer::BaseController
   end
 
   def create
-    @customer = current_customer.children.new(params[:customer])
+    @customer = current_parent.children.new(params[:customer])
 
     respond_to do |format|
       if @customer.save
@@ -64,7 +65,7 @@ class Customer::SubProfilesController < Customer::BaseController
   private
   
   def get_customer_obj
-    @customer = current_customer.children.find(params[:id])
+    @customer = current_parent.children.find(params[:id])
     
     unless @customer.present?
       return redirect_to customer_sub_profiles_path,
@@ -72,4 +73,10 @@ class Customer::SubProfilesController < Customer::BaseController
     end
   end
   
+  def check_for_access_data
+    if is_access_data?
+      flash[:notice] = 'You have limited access to requested account'
+      redirect_to customer_sub_profiles_path and return
+    end
+  end
 end

@@ -1,5 +1,6 @@
 class Customer::SessionsController < Devise::SessionsController
 
+=begin
   def create
     customer = Customer.where(:email=>params[:customer]["login"]).first
     unless customer.present?
@@ -16,6 +17,7 @@ class Customer::SessionsController < Devise::SessionsController
     sign_in(resource_name, resource)
     respond_with resource, :location => after_sign_in_path_for(resource)
   end
+=end
 
 end
 
