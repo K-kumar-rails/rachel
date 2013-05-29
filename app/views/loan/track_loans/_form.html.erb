@@ -1,0 +1,74 @@
+<div class="control-group">
+  <label class="control-label">Type</label>
+  <div class="controls">
+    <label><%= f.radio_button :customer_type, '1' %> Loaner</label>
+    <label><%= f.radio_button :customer_type, '0' %> Borrower</label>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Name</label>
+  <div class="controls">
+    <%= f.text_field :name, :placeholder => "Last name"%>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Amount</label>
+  <div class="controls input-xlarge">
+    <div class="input-prepend">
+      <span class="add-on">$</span>
+      <%= f.text_field :amount %>
+    </div>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Interest Rate</label>
+  <div class="controls input-xlarge">
+    <div class="input-prepend">
+      <span class="add-on">$</span>
+      <%= f.text_field :interest_rate %>
+    </div>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Loan Type</label>
+  <div class="controls">
+    <%= f.select :loan_type, TrackLoan::PAYMENTMADE.collect{|c| [c[0], c[1]]}, :selected => (f.object.loan_type), :class=>"select_box_fix" %>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Loan Term</label>
+  <div class="controls">
+    <label><%= f.radio_button :loan_term, '1' %> Monthly</label>
+    <label><%= f.radio_button :loan_term, '0' %> Yearly</label>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Payments Made</label>
+  <div class="controls">
+    <%= f.select :payments_made, :placeholder => "Payments Made"%>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Payment Start Date</label>
+  <div class="controls">
+    <%= f.date_select :payment_start_date, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }  %>
+    <%#= f.datetime :payment_start_date, :placeholder => "Payment Start Date"%>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Interest From</label>
+  <div class="controls">
+    <%= f.date_select :interest_from, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }  %>
+    <%#= f.datetime :interest_from, :placeholder => "Interest From"%>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">Final Amount</label>
+  <div class="controls">
+    <%= @loan.final_amount %>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.submit "Calculate", :class=>"btn btn-primary" %>
+</div>

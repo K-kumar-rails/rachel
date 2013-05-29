@@ -26,7 +26,10 @@ class Customer < ActiveRecord::Base
   #Define association
   belongs_to :parent, :class_name => 'Customer'
   has_many :children, :class_name => 'Customer', :foreign_key => "parent_id"
-
+  has_one :track_loan
+  
+  after_create :setup_loan_tracking
+  
   def is_profile_complete?
     @complete_attributes_count = 0
     PROFILE_ATTRIBUTES.each do |att|
@@ -54,4 +57,8 @@ class Customer < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
   
+  private
+  def setup_loan_tracking
+    TrackLoan.create(:customer_id => self.id) if self.track_loan.blank?
+  end  
 end

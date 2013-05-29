@@ -2,8 +2,7 @@ Cat::Application.routes.draw do
   devise_for :customers, 
     :controllers => {
       :registrations => "customer_registrations", 
-      :passwords => "customer_passwords", 
-      :sessions => "customer/sessions"
+      :passwords => "customer_passwords"
     }
 
   namespace 'customer' do
@@ -14,6 +13,10 @@ Cat::Application.routes.draw do
     end
     resources 'sub_profiles'
   end
-
+  
+  namespace 'loan' do
+    resource 'track_loan'
+  end
+  
   root :to => 'home#index'
 end
