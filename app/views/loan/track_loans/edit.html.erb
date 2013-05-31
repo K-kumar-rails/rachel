@@ -3,27 +3,17 @@
 <% end %>
 
 <div class="container-fluid">
-  <% if @loan.errors.any? %>
-    <%= error_message(@loan.errors.full_messages, 'alert-error')%>
-  <% end %>
-  <div class="row-fluid no_margin_top">
-    <div class="span12">
-      <%= simple_form_for(@loan, :url => loan_track_loan_path, 
-        :html => { :method => :put, :class=>"form-horizontal" } ) do |f| %>
-        <div class="widget-box">
-          <label>
-            <div class="widget-title cursor-pointer">
-              <span class="icon">
-                <input type="checkbox" name="event" id='' href="#add_content" class="toggle" />                  
-              </span>
-              <h5>Track Loan</h5>
-            </div>
-          </label>
-          <div class="widget-content nopadding" id="add_content">        
-            <%= render :partial => "form", :locals => { :f => f } %>
-          </div>
-        </div>
-      <% end %>      
+  <div class="row-fluid">
+    <div class="span7">
+      <%= render :partial => "form" %>
+    </div>
+    <div class="span5">
+      <%= render :partial => 'preview' %>
     </div>
   </div>
 </div>
+<style>
+  select {
+    width: 76px;
+  }
+</style>

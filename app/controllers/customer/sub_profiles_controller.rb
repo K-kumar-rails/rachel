@@ -1,10 +1,10 @@
 class Customer::SubProfilesController < Customer::BaseController
   before_filter :authenticate_customer!
   before_filter :get_customer_obj, :except => [:index, :new, :create]
-  before_filter :check_for_access_data, :except => [:index, :show]
+  #before_filter :check_for_access_data, :except => [:index, :show]
   
   def index
-    @sub_accounts = current_parent.children
+    @sub_accounts = Customer.where(:invited_by_id => current_customer.id)
   end
 
   def show
@@ -38,7 +38,7 @@ class Customer::SubProfilesController < Customer::BaseController
 
   def update
     respond_to do |format|
-      if @customer.update_attributes(params[:customer])
+      if @customer.update_without_password(params[:customer])
         format.html { 
           redirect_to customer_sub_profiles_path, 
           notice: 'Account was successfully updated.' 
@@ -65,7 +65,7 @@ class Customer::SubProfilesController < Customer::BaseController
   private
   
   def get_customer_obj
-    @customer = current_parent.children.find(params[:id])
+    @customer = Customer.where(:id => params[:id]).first
     
     unless @customer.present?
       return redirect_to customer_sub_profiles_path,

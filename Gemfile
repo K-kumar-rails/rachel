@@ -10,6 +10,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'country_select'
 gem "cancan"
+gem 'devise_invitable', '~> 1.1.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

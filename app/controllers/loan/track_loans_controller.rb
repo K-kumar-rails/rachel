@@ -14,7 +14,7 @@ class Loan::TrackLoansController < Loan::BaseController
          @loan.save!
          
         format.html { 
-          redirect_to edit_loan_track_loan_path, 
+          redirect_to edit_loan_track_loans_path, 
           notice: 'Action was successfully updated.' 
         }
       else

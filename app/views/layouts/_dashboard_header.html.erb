@@ -9,7 +9,6 @@
     <li class="btn btn-inverse" >
       <%= link_to '<i class="icon icon-home"></i> <span class="text">Home</span>'.html_safe, root_path %>
     </li>
-
     <li class="btn btn-inverse" >
       <%= link_to '<i class="icon icon-user"></i> <span class="text">Profile</span>'.html_safe, customer_profile_path %>
     </li>
@@ -32,13 +31,13 @@
       <%= link_to '<i class="icon icon-home"></i><span>Dashboard</span>'.html_safe, customer_dashboard_index_path %>
     </li>
     <li>
-      <%= link_to '<i class="icon icon-home"></i><span>Create Sub Account</span>'.html_safe, new_customer_sub_profile_path %>
+      <%= link_to '<i class="icon icon-user"></i><span>Invite new member</span>'.html_safe, new_customer_invitation_path %>
     </li>
     <li>
-      <%= link_to '<i class="icon icon-home"></i><span>Sub Accounts list</span>'.html_safe, customer_sub_profiles_path %>
+      <%= link_to '<i class="icon icon-user"></i><span>Invited member</span>'.html_safe, customer_sub_profiles_path %>
     </li>
     <li>
-      <%= link_to '<i class="icon icon-home"></i><span>Track Loan</span>'.html_safe, edit_loan_track_loan_path %>
+      <%= link_to '<i class="icon icon-file"></i><span>Track Loan</span>'.html_safe, edit_loan_track_loans_path %>
     </li>
   </ul>
 </div>

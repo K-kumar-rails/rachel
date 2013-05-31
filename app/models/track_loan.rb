@@ -14,5 +14,22 @@ class TrackLoan < ActiveRecord::Base
     final_amount = (amount*rate)/100
     return final_amount
   end
+
+  def calculate_interest
+    amount = self.amount
+    rate = self.interest_rate
+    term = self.loan_term
+    final_amount = (amount*rate*term)/(12*100) if self.is_monthly?
+    final_amount = (amount*rate*term)/100 if self.is_yearly?
+    return final_amount
+  end
   
+  def is_monthly?
+    self.monthly === true
+  end
+  
+  def is_yearly?
+    self.yearly === true
+  end
+    
 end

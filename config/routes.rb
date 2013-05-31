@@ -2,7 +2,8 @@ Cat::Application.routes.draw do
   devise_for :customers, 
     :controllers => {
       :registrations => "customer_registrations", 
-      :passwords => "customer_passwords"
+      :passwords => "customer_passwords",
+      :invitations => 'invitations'
     }
 
   namespace 'customer' do
@@ -15,8 +16,9 @@ Cat::Application.routes.draw do
   end
   
   namespace 'loan' do
-    resource 'track_loan'
+    resource 'track_loans'
   end
   
+  match '/search' => 'home#search'
   root :to => 'home#index'
 end

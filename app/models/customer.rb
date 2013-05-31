@@ -2,7 +2,7 @@ class Customer < ActiveRecord::Base
 
   PROFILE_ATTRIBUTES = [:email, :first_name, :last_name, :address, :city, :state, :zip_code, :country, :username]
 
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :confirmable, :authentication_keys => [:login]
 
   #Define attribute accessor
@@ -29,7 +29,19 @@ class Customer < ActiveRecord::Base
   has_one :track_loan
   
   after_create :setup_loan_tracking
+
+  #use scope to search user result from db
+  scope :user_search_by_keyword, lambda {|keyword|
+    self.where(
+      "lower(first_name) like ? "+
+      "or "+
+      "lower(username) like ? ",
+      '%'+ keyword.downcase+'%',
+      '%'+keyword.downcase+'%'
+    )
+  }
   
+    
   def is_profile_complete?
     @complete_attributes_count = 0
     PROFILE_ATTRIBUTES.each do |att|

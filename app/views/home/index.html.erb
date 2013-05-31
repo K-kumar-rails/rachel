@@ -2,13 +2,23 @@
   <div class="container">
     <div class="row animated fadeInDown">
       <div class="span12">
-        <div id="myCarousel" class="carousel slide" style="min-height :285px;">
+        <div id="myCarousel" class="carousel slide" style="min-height :380px;">
           <div class="carousel-inner">
            <div class="active item slide1">
               <div class="row">
-                <div class="span6 offset3">
+                <div class="span8 offset3">
                   <h1>
-                    Responsive and Clean rachel.loantracx.com
+                    Rachel.LoanTracx.com
+                    <!--<div id="search_event_page" class="clearfix">
+                      <div class="search_container"><span>Search for FRIENDS and FAMILIES</span><br /><br />
+                        <div class= 'span8'>
+                        <%= text_field_tag :search, '', :id => "search_options_container", :placeholder => 'Search Customers' %>
+                        <input name="" type="button" class="btn btn-primary search_button" value='Search'>
+                        </div>
+                      </div>
+                      <div id="search_result_container">
+                      </div>
+                    </div>-->
                   </h1>
                 </div>
               </div>
@@ -20,3 +30,25 @@
   </div>
 </div>
 
+<script>
+  $(document).on('keyup', '#search_options_container', function(e){
+    if (e.keyCode === 13) {
+      search_items();
+    }
+  });
+
+  $(document).on('click','.search_button', function(){
+    search_items();
+  });
+  
+  function search_items(search_keyword){
+    var search_keyword = $('#search_options_container').val().trim();
+    if (search_keyword.length > 0){
+      $.ajax({
+        type :'get',
+        data : {'search_keyword': search_keyword},
+        url : "<%= search_path(:format => :js) %>",
+      });
+    }
+  }  
+</script>

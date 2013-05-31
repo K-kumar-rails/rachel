@@ -7,6 +7,16 @@ module ApplicationHelper
         content_tag(:ul, content_tag(:a,'&times'.html_safe, :class=>"close", 'data-dismiss'=>"alert") + list_items.join.html_safe, :class=>"set_err_msg" )
       end
     end
+  end
+  
+  def get_placeholder_field(field)
+    if field === :email
+      return "Email"
+    elsif field === :first_name
+      return "First Name"
+    else 
+      return "Last Name"
+    end
   end  
   
 end

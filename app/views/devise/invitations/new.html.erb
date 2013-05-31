@@ -1,0 +1,49 @@
+<% content_for :header do %>
+  <h1>Invite Your Friend and Families</h1>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span8 offset2">
+      <% if resource.errors.any? %>
+        <%= error_message(resource.errors.full_messages, 'alert-error')%>
+      <% end %>
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon">
+            <i class="icon-pencil"></i>
+          </span>
+          <h5>Send an invitation</h5>
+        </div>
+        <div class="widget-content">
+          <div class="row">
+            <div class="span2"></div>
+            <div class="span6">
+              <div class="row">&nbsp;</div>
+                <%= simple_form_for(resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post}) do |f| %>
+                  <div class="row">
+                    <% resource.class.invite_key_fields.each do |field| -%>
+                      <div class="span4">
+                        <%= f.label field,:class=>"control-label" %>
+                      </div>
+                      <div class="span6">
+                        <%= f.text_field field, :placeholder => get_placeholder_field(field) %>
+                      </div>
+                    <% end -%>
+                  </div>
+                  <div class="row">
+                    <div class="span4"></div>
+                    <div class="span5 offset1">
+                      <%= f.submit "Send an invitation", :class=> "btn btn-inverse" %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
