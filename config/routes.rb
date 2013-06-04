@@ -13,6 +13,7 @@ Cat::Application.routes.draw do
       put :change_username
     end
     resources 'sub_profiles'
+    resources 'messages'
   end
   
   namespace 'loan' do

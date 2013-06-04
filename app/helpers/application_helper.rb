@@ -18,5 +18,29 @@ module ApplicationHelper
       return "Last Name"
     end
   end  
+
+  def unread_msg(current_customer)
+    current_customer.messages.where(:status => false).size
+  end
+  
+  def msg_body(message)
+    if message.subject === "Invite"
+      return "You send an invitation to #{message.content}"
+    elsif message.subject === "Invited"
+      return "You are invited by #{message.content}"
+    else
+      return message.content
+    end
+  end
+
+  def msg_subject(message)
+    if message.subject === "Invite"
+      return "You invited an member"
+    elsif message.subject === "Invited"
+      return "You are invited"
+    else
+      return message.subject
+    end
+  end
   
 end

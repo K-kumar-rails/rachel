@@ -1,5 +1,6 @@
 class Customer < ActiveRecord::Base
-
+  #acts_as_reader
+  
   PROFILE_ATTRIBUTES = [:email, :first_name, :last_name, :address, :city, :state, :zip_code, :country, :username]
 
   devise :invitable, :database_authenticatable, :registerable,
@@ -27,6 +28,7 @@ class Customer < ActiveRecord::Base
   belongs_to :parent, :class_name => 'Customer'
   has_many :children, :class_name => 'Customer', :foreign_key => "parent_id"
   has_one :track_loan
+  has_many :messages
   
   after_create :setup_loan_tracking
 

@@ -1,6 +1,6 @@
 <div id="header">
   <h1 class="logo_fix">
-    <%= link_to "CAT Admin", customer_dashboard_index_path %>
+    <%#= link_to "", customer_dashboard_index_path %>
   </h1>
 </div>
 
@@ -11,6 +11,19 @@
     </li>
     <li class="btn btn-inverse" >
       <%= link_to '<i class="icon icon-user"></i> <span class="text">Profile</span>'.html_safe, customer_profile_path %>
+    </li>
+    <li class="btn btn-inverse">
+      <a href="<%= customer_messages_path %>" > 
+        <i class="icon icon-envelope"></i>
+        <span class="text">Messages</span>
+        <% if unread_msg(current_customer) == 0 %>
+          <span class="label">
+        <% else %>
+          <span class="label label-important">
+        <% end %>
+            <%= unread_msg(current_customer) %>
+          </span>  
+      </a>
     </li>
     <li class="btn btn-inverse">
       <a title="" href="<%= edit_customer_registration_path %>">
@@ -34,7 +47,7 @@
       <%= link_to '<i class="icon icon-user"></i><span>Invite new member</span>'.html_safe, new_customer_invitation_path %>
     </li>
     <li>
-      <%= link_to '<i class="icon icon-user"></i><span>Invited member</span>'.html_safe, customer_sub_profiles_path %>
+      <%= link_to '<i class="icon icon-th-list"></i><span>Invited member</span>'.html_safe, customer_sub_profiles_path %>
     </li>
     <li>
       <%= link_to '<i class="icon icon-file"></i><span>Track Loan</span>'.html_safe, edit_loan_track_loans_path %>
