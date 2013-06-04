@@ -6,21 +6,14 @@ class TrackLoan < ActiveRecord::Base
   #define associations
   belongs_to :customer
   
-  PAYMENTMADE = { "Monthly" => 1, "Quarterly" => 2, "Annual" => 3 }
-  
-  def calculate_interest
-    amount = self.amount
-    rate = self.interest_rate
-    final_amount = (amount*rate)/100
-    return final_amount
-  end
+  PAYMENTMADE = { "Monthly" => 1, "Quarterly" => 2, "Annual" => 3 }  
 
   def calculate_interest
     amount = self.amount
     rate = self.interest_rate
     term = self.loan_term
-    final_amount = (amount*rate*term)/(12*100) if self.is_monthly?
-    final_amount = (amount*rate*term)/100 if self.is_yearly?
+    #final_amount = (amount*rate*term)/(12*100) if self.is_monthly?
+    final_amount = (amount*rate*term)/100 #if self.is_yearly?
     return final_amount
   end
   
