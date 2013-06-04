@@ -9,7 +9,11 @@
   </div>
   <div class="update-date ques_send_date">
     <span class="pull-right tipsy-tooltip" original-title="<%= messages.status ? 'Read' : 'Unread' %>">
-    <type="checkbox" name="colors[test]"><div class="<%= messages.status ? 'cat-event-checked' : 'cat-event-unchecked' %>"></div></span>               
+    <type="checkbox" name="colors[test]"><div class="<%= messages.status ? 'cat-event-checked' : 'cat-event-unchecked' %>"></div></span>
+    <%= link_to 'x', customer_message_path(messages), method: :delete, 
+      :class=>"badge badge-important tipsy-tooltip",
+      :confirm => 'Are you sure do you want to delete this message?',
+      "original-title" => "delete message" %>
   </div>
 </div>
 

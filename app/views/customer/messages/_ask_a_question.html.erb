@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div id="ask_a_question" class="modal hide fade"
+  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"
+      aria-hidden="true">×</button>
+    <h3 id="myModalLabel">
+      Ask Your Question
+    </h3>
+  </div>
+  
+  <div class="modal-body">
+    <h1>Comming Soon</h1>
+    <!--<%= simple_form_for(:item_query,
+    :url => customer_messages_path,
+    :remote => true, :html => { :method => :post, :class=>"form-horizontal" } ) do |f| %>
+    
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Subject</label>
+        <div class="controls">
+          <input type="email" size="50" name="item_query[subject]"
+            id="item_query_subject" class="string email required">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Questoin</label>
+        <div class="controls">
+          <textarea class="span2 confirm_bid_amount" 
+            id="item_query_query" name="item_query[content]" 
+            cols="80" rows="4" type="text" 
+            style="width: 223px; height: 84px;"></textarea>
+        </div>
+      </div>
+  </div>-->
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.submit "Submit", :class=>"btn btn-primary", 'aria-hidden'=>"true" %>
+  </div>
+  <% end %>  
+</div>
+<script>
+  $("#new_bidding_detail").submit(function(){
+    if($("#appendedPrependedInput").val == ''){
+      return false;
+    }
+  });
+</script>

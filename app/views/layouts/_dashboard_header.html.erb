@@ -52,5 +52,9 @@
     <li>
       <%= link_to '<i class="icon icon-file"></i><span>Track Loan</span>'.html_safe, edit_loan_track_loans_path %>
     </li>
+    <li>
+      <a href="#ask_a_question" role="button" data-toggle="modal">Ask a Question</a>
+      <%= render :partial => 'customer/messages/ask_a_question' %>
+    </li>
   </ul>
 </div>
