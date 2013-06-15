@@ -58,8 +58,8 @@ Cat::Application.configure do
     :address        => "smtp.sendgrid.net",
     :port           => "25",
     :authentication => :plain,
-    :user_name      => "mpatel.rails@gmail.com",
-    :password       => "mpat@1111"
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD']
   }
 
   # Enable threaded mode
