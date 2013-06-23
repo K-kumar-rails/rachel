@@ -1,10 +1,10 @@
-class Customer < ActiveRecord::Base
-  #acts_as_reader
-  
+class Borrower < ActiveRecord::Base
+
   PROFILE_ATTRIBUTES = [:email, :first_name, :last_name, :address, :city, :state, :zip_code, :country, :username]
 
-  devise :invitable, :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :confirmable, :authentication_keys => [:login]
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
+    :trackable, :validatable, :token_authenticatable, :confirmable, 
+    :authentication_keys => [:login] #:invitable
 
   #Define attribute accessor
   attr_accessible :email, :password, :password_confirmation, :current_password, :remember_me, :first_name,
@@ -30,7 +30,7 @@ class Customer < ActiveRecord::Base
   has_one :track_loan
   has_many :messages
   
-  after_create :setup_loan_tracking
+  #after_create :setup_loan_tracking
 
   #use scope to search user result from db
   scope :user_search_by_keyword, lambda {|keyword|
@@ -71,8 +71,5 @@ class Customer < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
   
-  private
-  def setup_loan_tracking
-    TrackLoan.create(:customer_id => self.id) if self.track_loan.blank?
-  end  
+ 
 end

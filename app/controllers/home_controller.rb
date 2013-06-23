@@ -8,4 +8,10 @@ class HomeController < ApplicationController
   def search
     @customers = Customer.user_search_by_keyword(params[:search_keyword])
   end
+  
+  def signup_account
+  end
+
+  def signin_account
+  end
 end

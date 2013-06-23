@@ -1,0 +1,56 @@
+<div id="box_login">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span2"></div>
+      <div class="span12 box sign_up_box box_mandetory box_wrapper">
+        <div class="head">
+          <center>
+            <h4>Create Your Account</h4>
+          </center>
+        </div>
+        <div class="form">
+          <div class="row-fluid">
+            <div class="span6" style="border:2px solid lightgray;padding:10px 10px 10px 10px;padding:10px 10px 10px 10px;border-radius: 10px 10px 10px 10px;">
+              <center>
+                <h4>Are you a lender?</h4>
+              </center>
+              <hr>
+                <p style="text-align: justify;">Have you loaned money to family or friends and just wish there was
+                 a way to track the loan and the payments made against it? <br/>
+                 &nbsp; 
+                 </p>
+              <hr>
+              <center>
+                <div class="btn-group bidder_signup">
+                  <%= link_to "Sign Up", new_customer_registration_path,
+                    :class => "btn btn-inverse btn-large" %>
+                </div>
+              </center>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"
+              style="float: right; margin-top: -260px; border:2px solid lightgray;padding:10px 10px 10px 10px;border-radius: 10px 10px 10px 10px;">
+              <center>
+                <h4>Are you a borrower?</h4>
+              </center>
+              <hr>
+                <p style="text-align: justify;">Are you borrowing money from family or friends and he keeps asking about 
+                the status of it? Have you every wished there was a way to let him see your 
+                progress onlline?</p>
+              <hr>
+              <center>
+                <div class="btn-group auction_admin_signup">
+                  <%= link_to "Sign Up", new_borrower_registration_path,
+                    :class => "btn btn-inverse btn-large" %>
+                </div>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span2"></div>
+    </div>
+  </div>
+</div>
+
