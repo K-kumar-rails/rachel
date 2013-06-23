@@ -1,4 +1,4 @@
-class InvitationsController < Devise::InvitationsController
+class Borrower::InvitationsController < Devise::InvitationsController
   before_filter :authenticate_customer!
   layout 'dashboard', :only => [:new]
   

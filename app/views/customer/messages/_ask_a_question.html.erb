@@ -1,4 +1,3 @@
-<!-- Modal -->
 <div id="ask_a_question" class="modal hide fade"
   tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -11,38 +10,36 @@
   </div>
   
   <div class="modal-body">
-    <h1>Comming Soon</h1>
-    <!--<%= simple_form_for(:item_query,
+    <%= simple_form_for(:message,
     :url => customer_messages_path,
     :remote => true, :html => { :method => :post, :class=>"form-horizontal" } ) do |f| %>
-    
       <div class="control-group">
         <label class="control-label" for="inputEmail">Subject</label>
         <div class="controls">
-          <input type="email" size="50" name="item_query[subject]"
-            id="item_query_subject" class="string email required">
+          <%#= select("message", "customer_id", @children.collect {|p| [ p.name, p.id ] }, {:prompt => 'Select Person'}) %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Subject</label>
+        <div class="controls">
+          <input type="email" size="50" name="message[subject]"
+            id="message_subject" class="string email required">
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="inputEmail">Questoin</label>
         <div class="controls">
           <textarea class="span2 confirm_bid_amount" 
-            id="item_query_query" name="item_query[content]" 
+            id="message_query" name="message[content]" 
             cols="80" rows="4" type="text" 
             style="width: 223px; height: 84px;"></textarea>
         </div>
       </div>
-  </div>-->
+  </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     <%= f.submit "Submit", :class=>"btn btn-primary", 'aria-hidden'=>"true" %>
   </div>
   <% end %>  
 </div>
-<script>
-  $("#new_bidding_detail").submit(function(){
-    if($("#appendedPrependedInput").val == ''){
-      return false;
-    }
-  });
-</script>
+

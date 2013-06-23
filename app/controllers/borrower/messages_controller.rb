@@ -1,4 +1,4 @@
-class Customer::MessagesController < Customer::BaseController
+class Borrower::MessagesController < Customer::BaseController
   before_filter :authenticate_customer!
 
   def index

@@ -17,9 +17,16 @@
           <% if current_customer %>                                    
             <li><%= link_to('Dashboard', customer_dashboard_index_path) %></li>                
             <li><%= link_to('Sign out', destroy_customer_session_path, :class=>"btn-header", :method => :delete) %></li>
+          <% elsif current_borrower %>
+            <li><%= link_to('Dashboard', borrower_dashboard_index_path) %></li>                
+            <li><%= link_to('Sign out', destroy_borrower_session_path, :class=>"btn-header", :method => :delete) %></li>
           <% else %>
-            <li><%= link_to('Sign up', new_customer_registration_path, :class=>"btn-header") %></li>                
-            <li><%= link_to('Sign in', new_customer_session_path, :class=>"btn-header") %></li>                
+            <li>
+              <%= link_to('Sign up', signup_account_path, :class=>"btn-header") %>
+            </li>
+            <li>
+              <%= link_to('Sign in', signin_account_path, :class=>"btn-header") %>
+            </li>
           <% end %>
         </ul>
       </div>

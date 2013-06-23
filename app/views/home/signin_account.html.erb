@@ -1,0 +1,47 @@
+<div id="box_login">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span2"></div>
+      <div class="span12 box sign_in_box box_mandetory box_wrapper" style="height: 375px">
+        <div class="head">
+          <center>
+            <h4>Sign Into Your Account</h4>
+          </center>
+        </div>
+        <div class="form">
+          <div class="row-fluid">
+            <div class="span6" style="border:2px solid lightgray;padding:25px;border-radius: 10px 10px 10px 10px;">
+              <center>
+                <h4>Are you a lender?</h4>
+              </center>
+              <hr>
+              <center>
+              <div class="btn-group bidder_signin">
+                  <%= link_to "Sign In", new_customer_session_path,
+                    :class => "btn btn-inverse btn-large" %>
+              </div>
+              </center>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"
+              style="margin-top: -170px; float: right; border:2px solid lightgray;padding:25px;border-radius: 10px 10px 10px 10px;">
+                <center>
+                  <h4>Are you a borrower?</h4>
+                </center>
+                <hr>
+                <center>
+                  <div class="btn-group auction_admin_signin">
+                    <%= link_to "Sign In", new_borrower_session_path,
+                      :class => "btn btn-inverse btn-large" %>
+                </div>
+                </center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span2"></div>
+    </div>
+  </div>
+</div>
+

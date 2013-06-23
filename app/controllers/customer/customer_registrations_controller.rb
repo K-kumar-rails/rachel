@@ -1,4 +1,4 @@
-class CustomerRegistrationsController < Devise::RegistrationsController
+class Customer::CustomerRegistrationsController < Devise::RegistrationsController
   before_filter :authenticate_customer!, :only => [:update, :edit]
   layout 'dashboard', :only => [:edit, :update]
 
