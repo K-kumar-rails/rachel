@@ -34,22 +34,16 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span6">
+    <div class="span10 offset1">
       <div class="widget-box">
         <div class="widget-title">
-          <span class="icon"><i class="icon-file"></i></span>
-          <h5>Recent Posts</h5>
-          <span title="54 total posts" class="label label-info tip-left">54</span>
+          <h5>Set Up a Lending Account</h5>
         </div>
-    </div>
-  </div>
-  <div class="span6">
-    <div class="widget-box">
-      <div class="widget-title">
-        <span class="icon"><i class="icon-comment"></i></span>
-        <h5>Recent Comments</h5>
-        <span title="88 total comments" class="label label-info tip-left">88</span>
-      </div>
+        <div class="widget-content nopadding">
+          <ul class="recent-posts">
+            <%= render :partial => 'recent_comment' %>
+          </ul>
+        </div>
     </div>
   </div>
 </div>
