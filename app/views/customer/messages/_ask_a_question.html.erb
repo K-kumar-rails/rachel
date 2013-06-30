@@ -14,9 +14,10 @@
     :url => customer_messages_path,
     :remote => true, :html => { :method => :post, :class=>"form-horizontal" } ) do |f| %>
       <div class="control-group">
-        <label class="control-label" for="inputEmail">Subject</label>
+        <label class="control-label" for="inputEmail">Customer</label>
         <div class="controls">
-          <%#= select("message", "customer_id", @children.collect {|p| [ p.name, p.id ] }, {:prompt => 'Select Person'}) %>
+          <%= select("message", "customer_id", @childrens.collect {|p| [ p.first_name, p.id ] }, 
+            {:prompt => 'Select a customer'}) %>
         </div>
       </div>
       <div class="control-group">

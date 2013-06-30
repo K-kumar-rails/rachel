@@ -7,10 +7,10 @@ class Customer < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :confirmable, :authentication_keys => [:login]
 
   #Define attribute accessor
-  attr_accessible :email, :password, :password_confirmation, :current_password, :remember_me, :first_name,
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name,
     :last_name, :username, :phone_number, :address, :city, :state, :zip_code, :country,
-    :terms_of_service, :email_confirmation, :login
-  attr_accessor :current_password, :login
+    :terms_of_service, :email_confirmation, :login, :organization_name, :pupose_of_loan
+  attr_accessor :login
   
   #Define validation
   validates :first_name, :presence => true, :format => { :with => /^[a-zA-Z ]+$/, :message => "Only letters allowed"  }

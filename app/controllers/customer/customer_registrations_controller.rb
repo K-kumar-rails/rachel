@@ -3,9 +3,16 @@ class Customer::CustomerRegistrationsController < Devise::RegistrationsControlle
   layout 'dashboard', :only => [:edit, :update]
 
   def update
+  
+    #required for settings form to submit when password is left blank
+    if params[:customer][:password].blank?
+      params[:customer].delete("password")
+      params[:customer].delete("password_confirmation")
+    end
+    
     # required for settings form to submit when password is left blank
     @customer = current_customer
-    if @customer.update_without_password(params[:customer])
+    if @customer.update_attributes(params[:customer])
       set_flash_message :notice, :updated
       # Sign in the user bypassing validation in case his password changed
       sign_in @customer, :bypass => true
