@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
+  before_filter :get_children
+  
   private
 
+  def get_children
+    @childrens = current_customer.children if current_customer
+  end
+  
   def current_parent
     if current_customer.present? && current_customer.parent.present?
       return current_customer.parent

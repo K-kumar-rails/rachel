@@ -14,9 +14,22 @@ module ApplicationHelper
       return "Email"
     elsif field === :first_name
       return "First Name"
-    else 
+    elsif field === :last_name
       return "Last Name"
+    elsif field === :address
+      return "Address"
+    elsif field === :city
+      return 'Enter city'
+    elsif field === :state
+      return 'Enter state'
+    elsif field === :zip_code
+      return 'Enter zip code'
+    elsif field === :pupose_of_loan
+      return 'Purpose of your loan'
+    else
+    
     end
+    
   end  
 
   def unread_msg(current_customer)
