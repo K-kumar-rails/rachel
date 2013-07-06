@@ -4,12 +4,12 @@ class Borrower::BorrowerRegistrationsController < Devise::RegistrationsControlle
 
   def update
     # required for settings form to submit when password is left blank
-    @customer = current_customer
-    if @customer.update_without_password(params[:customer])
+    @borrower = current_borrower
+    if @borrower.update_without_password(params[:borrower])
       set_flash_message :notice, :updated
       # Sign in the user bypassing validation in case his password changed
-      sign_in @customer, :bypass => true
-      redirect_to customer_dashboard_index_path
+      sign_in @borrower, :bypass => true
+      redirect_to borrower_dashboard_index_path
     else
       render "edit_personal"
     end

@@ -1,0 +1,19 @@
+<div class="new-update clearfix">
+  <div class="update-done">         
+    <a href="javascript:void(0)" title="">
+      <strong>
+        Subject: <%= msg_subject(messages) %> 
+      </strong>
+    </a>
+    <span><b>Description:</b> <%= msg_body(messages) %></span>
+  </div>
+  <div class="update-date ques_send_date">
+    <span class="pull-right tipsy-tooltip" original-title="<%= messages.status ? 'Read' : 'Unread' %>">
+    <type="checkbox" name="colors[test]"><div class="<%= messages.status ? 'cat-event-checked' : 'cat-event-unchecked' %>"></div></span>
+    <%= link_to 'x', borrower_message_path(messages), method: :delete, 
+      :class=>"badge badge-important tipsy-tooltip",
+      :confirm => 'Are you sure do you want to delete this message?',
+      "original-title" => "delete message" %>
+  </div>
+</div>
+

@@ -1,5 +1,5 @@
 class Borrower::InvitationsController < Devise::InvitationsController
-  before_filter :authenticate_customer!
+  before_filter :authenticate_borrower!
   layout 'dashboard', :only => [:new]
   
   def create
@@ -7,7 +7,7 @@ class Borrower::InvitationsController < Devise::InvitationsController
 
     if resource.errors.empty?
       set_flash_message :notice, :send_instructions, :email => self.resource.email
-      @message = current_customer.messages.create(
+      @message = current_borrower.messages.create(
         :content => self.resource.email,
         :subject => "Invite"
       )

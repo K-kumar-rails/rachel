@@ -1,4 +1,4 @@
-class Borrower::DashboardController < Customer::BaseController
+class Borrower::DashboardController < Borrower::BaseController
   before_filter :authenticate_borrower!
   
   def index

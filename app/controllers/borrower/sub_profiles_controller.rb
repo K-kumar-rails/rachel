@@ -1,10 +1,10 @@
-class Borrower::SubProfilesController < Customer::BaseController
-  before_filter :authenticate_customer!
-  before_filter :get_customer_obj, :except => [:index, :new, :create]
+class Borrower::SubProfilesController < Borrower::BaseController
+  before_filter :authenticate_borrower!
+  before_filter :get_borrower_obj, :except => [:index, :new, :create]
   #before_filter :check_for_access_data, :except => [:index, :show]
   
   def index
-    @sub_accounts = Customer.where(:invited_by_id => current_customer.id)
+    @sub_accounts = borrower.where(:invited_by_id => current_borrower.id)
   end
 
   def show
@@ -12,7 +12,7 @@ class Borrower::SubProfilesController < Customer::BaseController
   end
 
   def new
-    @customer = current_parent.children.new
+    @borrower = current_parent.children.new
   end
 
   def edit
@@ -20,12 +20,12 @@ class Borrower::SubProfilesController < Customer::BaseController
   end
 
   def create
-    @customer = current_parent.children.new(params[:customer])
+    @borrower = current_parent.children.new(params[:borrower])
 
     respond_to do |format|
-      if @customer.save
+      if @borrower.save
         format.html { 
-          redirect_to customer_sub_profiles_path, 
+          redirect_to borrower_sub_profiles_path, 
           notice: 'Account was successfully created.' 
         }
       else
@@ -38,9 +38,9 @@ class Borrower::SubProfilesController < Customer::BaseController
 
   def update
     respond_to do |format|
-      if @customer.update_without_password(params[:customer])
+      if @borrower.update_without_password(params[:borrower])
         format.html { 
-          redirect_to customer_sub_profiles_path, 
+          redirect_to borrower_sub_profiles_path, 
           notice: 'Account was successfully updated.' 
         }
       else
@@ -52,10 +52,10 @@ class Borrower::SubProfilesController < Customer::BaseController
   end
 
   def destroy
-    @customer.destroy
+    @borrower.destroy
     respond_to do |format|
       format.html { 
-        redirect_to customer_sub_profiles_path,
+        redirect_to borrower_sub_profiles_path,
         notice: 'Account was successfully deleted.' 
       }
     end
@@ -64,11 +64,11 @@ class Borrower::SubProfilesController < Customer::BaseController
   
   private
   
-  def get_customer_obj
-    @customer = Customer.where(:id => params[:id]).first
+  def get_borrower_obj
+    @borrower = Borrower.where(:id => params[:id]).first
     
-    unless @customer.present?
-      return redirect_to customer_sub_profiles_path,
+    unless @borrower.present?
+      return redirect_to borrower_sub_profiles_path,
         notice: 'You can not access requested account'
     end
   end
@@ -76,7 +76,7 @@ class Borrower::SubProfilesController < Customer::BaseController
   def check_for_access_data
     if is_access_data?
       flash[:notice] = 'You have limited access to requested account'
-      redirect_to customer_sub_profiles_path and return
+      redirect_to borrower_sub_profiles_path and return
     end
   end
 end

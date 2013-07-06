@@ -23,7 +23,9 @@ class ApplicationController < ActionController::Base
   end
   
   def after_sign_in_path_for(resource)
-    if resource.is_a?(Customer)
+    if resource.is_a?(AdminUser)
+      return admin_dashboard_path
+    elsif resource.is_a?(Customer)
       return customer_dashboard_index_path
     elsif resource.is_a?(Borrower)
       return borrower_dashboard_index_path

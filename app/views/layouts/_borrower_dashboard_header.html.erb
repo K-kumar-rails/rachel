@@ -1,0 +1,60 @@
+<div id="header">
+  <h1 class="logo_fix">
+    
+  </h1>
+</div>
+
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav btn-group">
+    <li class="btn btn-inverse" >
+      <%= link_to '<i class="icon icon-home"></i> <span class="text">Home</span>'.html_safe, root_path %>
+    </li>
+    <li class="btn btn-inverse" >
+      <%= link_to '<i class="icon icon-user"></i> <span class="text">Profile</span>'.html_safe, borrower_profile_path %>
+    </li>
+    <li class="btn btn-inverse">
+      <a href="<%= borrower_message_path %>" > 
+        <i class="icon icon-envelope"></i>
+        <span class="text">Messages</span>
+        <% if unread_msg(current_borrower) == 0 %>
+          <span class="label">
+        <% else %>
+          <span class="label label-important">
+        <% end %>
+            <%= unread_msg(current_borrower) %>
+          </span>  
+      </a>
+    </li>
+    <li class="btn btn-inverse">
+      <a title="" href="<%= edit_borrower_registration_path %>">
+        <i class="icon icon-cog"></i>
+        <span class="text">Settings</span>
+      </a>
+    </li>
+    <li class="btn btn-inverse">
+      <%= link_to '<i class="icon icon-share-alt"></i><span class="text">Logout</span>'.html_safe, destroy_borrower_session_path, :method => :delete %>
+    </li>
+  </ul>
+</div>
+
+<div id="sidebar">
+  <a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul id="sidebar_nav">
+    <li>
+      <%= link_to '<i class="icon icon-home"></i><span>Dashboard</span>'.html_safe, customer_dashboard_index_path %>
+    </li>
+    <li>
+      <%= link_to '<i class="icon icon-user"></i><span>Invite new member</span>'.html_safe, new_customer_invitation_path %>
+    </li>
+    <li>
+      <%= link_to '<i class="icon icon-th-list"></i><span>Invited member</span>'.html_safe, customer_sub_profiles_path %>
+    </li>
+    <li>
+      <%= link_to '<i class="icon icon-file"></i><span>Track Loan</span>'.html_safe, edit_loan_track_loans_path %>
+    </li>
+    <li>
+      <a href="#ask_a_question" role="button" data-toggle="modal">Ask a Question</a>
+      <%= render :partial => 'customer/messages/ask_a_question' %>
+    </li>
+  </ul>
+</div>

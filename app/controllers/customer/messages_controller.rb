@@ -11,11 +11,17 @@ class Customer::MessagesController < Customer::BaseController
   
   def create
     message = current_customer.messages.new(params[:message])
-
-    if message.save
-      flash[:notice] = 'Successfully sent your question'
-    else
-      flash[:error] = 'Your Question did not sent'
+    
+    respond_to do |format|
+      if message.save
+        format.js { 
+          flash[:notice] = 'Successfully sent your message'
+        }
+      else
+        format.js {
+          flash[:error] = 'Your message did not sent'
+        }
+      end
     end
   end
   
