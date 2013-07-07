@@ -5,7 +5,8 @@ class CreateSubscriptionTypes < ActiveRecord::Migration
       t.text :description
       t.float :price
       t.integer :number_of_days
-
+      t.integer :number_of_loans
+      
       t.timestamps
     end
   end

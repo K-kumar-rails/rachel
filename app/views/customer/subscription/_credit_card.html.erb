@@ -1,0 +1,98 @@
+<div class="widget-box">
+  <div class="widget-title">
+    <h5>Credit card details</h5>
+  </div>
+  <%= form_for('', :url => '', :method => "post", :id => "payment-form") do |f| %>
+    <div class="widget-content offset2">
+      <div class="row-fluid" >
+        <div class="span12 alert alert-error" id="stripe_error" style="display:none;">
+          <span class="payment-errors"></span>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          <h5>A. Try it before you buy it.</h5>
+          <p>3 Months FREE on us.</p>
+        </div>
+      </div>
+      <hr style="margin: 16px 0 15px -205px;">
+      <div class="row-fluid">
+        <div class="span5">
+          <h5>B. I am ready to jump right in.</h5>
+        </div>
+      </div>&nbsp;&nbsp;&nbsp;
+      <div class="row-fluid">
+        <div class="span3">
+          Subscription Type
+        </div>
+        <div class="span6">
+          <%= select_tag 'plan_id', options_for_select(@plans) %>
+        </div>
+        <i class="icon-question-sign tipsy-tooltip" original-title="Size should be 271x254"> </i>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          Card Number
+        </div>
+        <div class="span6">
+          <input type="text" size="20" data-stripe="number"/>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          Name
+        </div>
+        <div class="span6">
+          <input type="text" size="20" data-stripe="name"/>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          CVC
+        </div>
+        <div class="span6">
+          <input type="text" size="4" data-stripe="cvc"/>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          Expiration (MM/YYYY)
+        </div>
+        <div class="span1">
+          <%= select_month(Date.today, {:field_name => "exp_month", :use_month_numbers => true, :prefix => 'credit_card' }, {:style => "width:50px;"}) %>
+        </div>
+        <div class="span3">
+          <%= select_year(Date.today, {:field_name => "exp_year", :start_year => Date.today.year, :end_year => Date.today.year + 15, :prefix => 'credit_card'}, {:style=>"width:100px;"}) %>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          Billing Zip
+        </div>
+        <div class="span6">
+          <input type="text" size="5" data-stripe="number"/>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3">
+          Total Due
+        </div>
+        <div class="span6">
+          <input type="text" size="5" data-stripe="price"/>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span3"></div>
+        <div class="span5">
+          <%= f.submit  'Confirm & Pay', :class => "btn btn-primary" %>
+          <%= link_to "Back", customer_dashboard_index_path, :class =>"btn btn-inverse" %>
+        </div>
+        <div class="span1">
+          <span id="spinner" style="display: none;">
+            <i class="icon-spinner icon-spin icon-3x pull-right"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,8 @@
 Cat::Application.routes.draw do
+  root :to => 'home#index'
+  
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   devise_for :customers, 
     :controllers => {
@@ -22,6 +26,7 @@ Cat::Application.routes.draw do
     end
     resources 'sub_profiles'
     resources 'messages'
+    resources 'subscription', :only => [:index, :create]
   end
   
   namespace 'borrower' do
@@ -39,7 +44,7 @@ Cat::Application.routes.draw do
   end
   
   match '/search' => 'home#search'
-  root :to => 'home#index'
+  
   
   match '/signup_account' => 'home#signup_account'
   match '/signin_account' => 'home#signin_account'

@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-
+//= require jquery.uniform.min
+//= require jquery.tipsy
+//= require common_custom

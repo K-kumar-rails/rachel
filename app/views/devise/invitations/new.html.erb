@@ -37,8 +37,9 @@
                   </div>
                   <div class="row">
                     <div class="span4"></div>
-                    <div class="span5 offset1">
-                      <%= f.submit "Send an invitation", :class=> "btn btn-inverse" %>
+                    <div class="span8 offset4">
+                      <%= f.submit "Send an invitation", :class=> "btn btn-primary" %>
+                      <%= link_to "Back", customer_dashboard_index_path, :class =>"btn btn-inverse" %>
                     </div>
                   </div>
                 <% end %>
