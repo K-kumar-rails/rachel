@@ -56,7 +56,10 @@
       <%= link_to '<i class="icon icon-file"></i><span>Subscription</span>'.html_safe, customer_subscription_index_path %>
     </li>
     <li>
-      <a href="#ask_a_question" role="button" data-toggle="modal">Ask a Question</a>
+      <%= link_to '<i class="icon icon-file"></i><span>All Loans</span>'.html_safe, customer_loans_path %>
+    </li>
+    <li>
+      <a href="#ask_a_question" role="button" data-toggle="modal"><i class="icon icon-question-sign"></i>Ask a Question</a>
       <%= render :partial => 'customer/messages/ask_a_question', :childrens => @childrens %>
     </li>
   </ul>

@@ -1,0 +1,35 @@
+<% content_for :header do %>
+  <h1>Setup Your Loan Amounts</h1>
+<% end %>
+
+<div class="container-fluid">
+  <% if @loan.errors.any? %>
+    <%= error_message(@loan.errors.full_messages, 'alert-error')%>
+  <% end %>
+  <div class="row-fluid">
+    <% %>
+    <div class="span7">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon"><i class="icon-align-justify"></i></span>
+          <h5>loan</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <%= simple_form_for(@loan, :url => customer_loans_path, :html => { :method => :post, :class=>"form-horizontal" } ) do |f| %>
+            <%= render :partial => "form", :locals => { :f => f } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="span5">
+      <%= render :partial => 'preview' %>
+    </div>
+  </div>
+</div>
+
+<style>
+  select {
+    width: 76px;
+  }
+</style>
+

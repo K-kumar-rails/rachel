@@ -39,8 +39,19 @@
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <%= f.submit "Submit", :class=>"btn btn-primary", 'aria-hidden'=>"true" %>
+    <%= f.submit "Submit", :class=>"btn btn-primary submit", 'aria-hidden'=>"true" %>
+    <span id="spinner" style="display: none;">
+      <%= image_tag("/assets/spinner.gif", :alt => "Spinner Image") %>
+    </span>
   </div>
   <% end %>  
 </div>
+<script type="text/javascript">
+  $(document).on("ajax:beforeSend", 'form', function(){
+    $("#spinner").show();
+  });
 
+  $(document).on('ajax:success', 'form', function(){
+    $("#spinner").hide();
+  });
+</script>

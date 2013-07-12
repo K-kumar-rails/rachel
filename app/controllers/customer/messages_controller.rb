@@ -10,18 +10,25 @@ class Customer::MessagesController < Customer::BaseController
   end
   
   def create
-    message = current_customer.messages.new(params[:message])
-    
-    respond_to do |format|
-      if message.save
-        format.js { 
-          flash[:notice] = 'Successfully sent your message'
-        }
-      else
-        format.js {
-          flash[:error] = 'Your message did not sent'
-        }
+    if params[:message].present? && params[:message][:customer_id].present?
+      c_params = {
+        :customer_id => params[:message][:customer_id].to_i
+      }
+      @message = Message.new(params[:message].merge(c_params))
+      
+      respond_to do |format|
+        if @message.save
+          format.js { 
+            flash.now[:notice] = 'Successfully sent your message'
+          }
+        else
+          format.js {
+            flash[:error] = @message.errors.full_messages.join("<br/>")
+          }
+        end
       end
+    else
+      flash.now[:alert] = 'Please select customer'
     end
   end
   

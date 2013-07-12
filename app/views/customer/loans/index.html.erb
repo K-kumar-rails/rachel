@@ -1,0 +1,12 @@
+<% content_for :header do %>
+  <h1>View/Edit Loans</h1>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid ">
+    <div class="span12">
+      <%= render :partial => "loans",
+        :locals =>{:loans => @loans} %>
+    </div>
+  </div>
+</div>

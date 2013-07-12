@@ -27,6 +27,7 @@ Cat::Application.routes.draw do
     resources 'sub_profiles'
     resources 'messages'
     resources 'subscription', :only => [:index, :create]
+    resources 'loans'
   end
   
   namespace 'borrower' do

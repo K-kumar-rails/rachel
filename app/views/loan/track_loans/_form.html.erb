@@ -26,6 +26,15 @@
           </div>
           <div class="row">
             <div class="span4">
+              Select Customer
+            </div>
+            <div class="span6">
+              <%= select("message", "customer_id", @childrens.collect {|p| [ p.first_name, p.id ] }, 
+              {:prompt => 'Select a customer'}, :width => '150px; !important') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
               <%= f.label :name,:class=>"control-label" %>
             </div>
             <div class="span4">

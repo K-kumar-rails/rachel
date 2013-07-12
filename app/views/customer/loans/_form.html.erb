@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="span4">
+    <label class="control-label"> Customer </label>
+  </div>
+  <div class="span6 paddingTop">
+    <%= f.select :customer_id, @childrens.collect {|p| [ p.first_name, p.id ] }, 
+    {:prompt => 'Select a customer'} %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :amount,:class=>"control-label" %>
+  </div>
+  <div class="span4 paddingTop">
+    <%= f.text_field :amount %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :loan_length, :class=>"control-label" %>
+  </div>
+  <div class="span6 paddingTop">
+    <%= f.text_field :loan_length, :style=>"width: 53px !important" %>
+    <%= f.select :loan_type, Loan::LOAN_TYPE.map{ |c| [c[0], c[1]] } %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :rate, :class=>"control-label" %>
+  </div>
+  <div class="span6 paddingTop">
+    <%= f.text_field :rate, :style=>"width: 53px !important" %>
+    <%= f.select :rate, Loan::RATE_TYPE.map{ |c| [c[0], c[1]] } %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :payment_frequency, :class=>"control-label" %>
+  </div>
+  <div class="span4 paddingTop">
+    <%= f.select :payment_frequency, Loan::PAYMENT_FREQUENCY.map{ |c| [c[0], c[1]] } %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :payment_type, :class=>"control-label" %>
+  </div>
+  <div class="span4 paddingTop">
+    <%= f.select :payment_type, Loan::PAYMENT_TYPE.map{ |c| [c[0], c[1]] } %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :loan_date, :class=>"control-label" %>
+  </div>
+  <div class="span8 paddingTop">
+    <%= f.date_select :loan_date, :prompt => { :day => 'day', :month => 'month', :year => 'year' }  %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :auto_draft, :class=>"control-label" %>
+  </div>
+  <div class="span8 paddingTop">
+    <%= f.check_box :auto_draft %>
+  </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <%= f.label :mailed, :class=>"control-label" %>
+  </div>
+  <div class="span8 paddingTop">
+    <%= f.check_box :mailed %>
+  </div>
+</div>
+<div class="row" style="height:60px;">
+  <div class="span3"></div>
+  <div class="span6 offset1 paddingTop">
+    <%= f.submit "Calculate", :class =>"btn btn-primary" %>
+    <%= link_to "Back", customer_dashboard_index_path, :class =>"btn btn-inverse" %>
+  </div>
+</div>
+
+<style>
+#loan_customer_id, #loan_loan_type, #loan_rate, #loan_payment_frequency, #loan_payment_type, #loan_amount{
+  width: 150px !important;
+}
+.paddingTop{
+  padding-top: 10px;
+}
+</style>

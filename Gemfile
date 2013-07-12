@@ -7,7 +7,6 @@ gem 'simple_form'
 gem 'country_select'
 gem "cancan"
 gem 'devise_invitable', '~> 1.1.0'
-#gem 'unread'
 gem 'activeadmin'
 
 group :assets do

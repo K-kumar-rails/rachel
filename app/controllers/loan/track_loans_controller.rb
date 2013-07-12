@@ -3,10 +3,12 @@ class Loan::TrackLoansController < Loan::BaseController
 
   def edit
     @loan = current_customer.track_loan
+    @childrens = current_customer.children
   end
 
   def update
     @loan = current_customer.track_loan
+    @childrens = current_customer.children
     
     respond_to do |format|
       if @loan.update_attributes(params[:track_loan])

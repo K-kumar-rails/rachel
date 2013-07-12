@@ -29,6 +29,7 @@ class Customer < ActiveRecord::Base
   has_many :children, :class_name => 'Customer', :foreign_key => "invited_by_id"
   has_one :track_loan
   has_many :messages
+  has_many :loans
   
   after_create :setup_loan_tracking
 
