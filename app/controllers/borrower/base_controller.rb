@@ -1,5 +1,5 @@
 class Borrower::BaseController < ApplicationController
-  layout "dashboard"
+  layout "borrower_dashboard"
   #before_filter :initilize
   
 
